@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "slug": "aide-sociale",
+        "title": {
+            "rendered": "Aide Sociale"
+        },
+        "title_ar": "المساعدة الاجتماعية",
+        "acf": {
+            "description_fr": "Accompagnement financier et moral des adhérents en situation difficile. L'AOS intervient pour les cas de maladie grave, décès d'un proche, ou difficultés sociales imprévues.",
+            "description_ar": "مرافقة مالية ومعنوية للمنخرطين في الأوضاع الصعبة. تتدخل الجمعية في حالات المرض الخطير أو وفاة أحد الأقارب أو الصعوبات الاجتماعية الطارئة.",
+            "icon": "HeartHandshake",
+            "color": "#1B2A4A",
+            "featured": true
+        }
+    },
+    {
+        "id": 2,
+        "slug": "couverture-medicale",
+        "title": {
+            "rendered": "Couverture Médicale"
+        },
+        "title_ar": "التغطية الطبية",
+        "acf": {
+            "description_fr": "Prise en charge partielle ou totale des frais médicaux non couverts par l'AMO. Médicaments, hospitalisations, soins dentaires et ophtalmologiques inclus.",
+            "description_ar": "تحمل جزئي أو كلي للمصاريف الطبية غير المشمولة بالتأمين الإجباري. يشمل الأدوية والاستشفاء وعلاج الأسنان والعيون.",
+            "icon": "Stethoscope",
+            "color": "#2D4270",
+            "featured": true
+        }
+    },
+    {
+        "id": 3,
+        "slug": "aide-scolaire",
+        "title": {
+            "rendered": "Aide à la Scolarisation"
+        },
+        "title_ar": "المساعدة على التمدرس",
+        "acf": {
+            "description_fr": "Soutien financier annuel pour la scolarisation des enfants des adhérents. Fournitures scolaires, frais d'inscription et bourses pour les études supérieures.",
+            "description_ar": "دعم مالي سنوي لتمدرس أبناء المنخرطين. يشمل اللوازم المدرسية ورسوم التسجيل ومنح الدراسات العليا.",
+            "icon": "GraduationCap",
+            "color": "#1B2A4A",
+            "featured": true
+        }
+    },
+    {
+        "id": 4,
+        "slug": "activites-culturelles",
+        "title": {
+            "rendered": "Activités Culturelles & Sportives"
+        },
+        "title_ar": "الأنشطة الثقافية والرياضية",
+        "acf": {
+            "description_fr": "Organisation de sorties culturelles, voyages, tournois sportifs et événements festifs tout au long de l'année pour renforcer la cohésion entre adhérents.",
+            "description_ar": "تنظيم رحلات ثقافية وأسفار ودوريات رياضية وفعاليات احتفالية على مدار السنة لتعزيز التماسك بين المنخرطين.",
+            "icon": "Trophy",
+            "color": "#F26522",
+            "featured": true
+        }
+    },
+    {
+        "id": 5,
+        "slug": "prets-exceptionnels",
+        "title": {
+            "rendered": "Prêts Exceptionnels"
+        },
+        "title_ar": "القروض الاستثنائية",
+        "acf": {
+            "description_fr": "Octroi de prêts sans intérêts aux adhérents confrontés à des situations d'urgence financière. Remboursement échelonné sur retenue mensuelle sur salaire.",
+            "description_ar": "منح قروض بدون فوائد للمنخرطين الذين يواجهون أوضاعاً مالية طارئة. مع إمكانية السداد بالتقسيط عبر الخصم الشهري من الراتب.",
+            "icon": "Banknote",
+            "color": "#2D4270",
+            "featured": false
+        }
+    },
+    {
+        "id": 6,
+        "slug": "soutien-deces",
+        "title": {
+            "rendered": "Soutien au Décès"
+        },
+        "title_ar": "مساعدة الوفاة",
+        "acf": {
+            "description_fr": "Versement d'une allocation de solidarité en cas de décès de l'adhérent ou d'un membre de sa famille directe. Démarches simplifiées et traitement prioritaire.",
+            "description_ar": "صرف منحة تضامنية في حالة وفاة المنخرط أو أحد أفراد أسرته المباشرة. إجراءات مبسطة ومعالجة ذات أولوية.",
+            "icon": "Ribbon",
+            "color": "#1B2A4A",
+            "featured": false
+        }
+    },
+    {
+        "id": 7,
+        "slug": "retraite-accompagnement",
+        "title": {
+            "rendered": "Accompagnement à la Retraite"
+        },
+        "title_ar": "مرافقة التقاعد",
+        "acf": {
+            "description_fr": "Sessions d'information et d'orientation pour les fonctionnaires approchant l'âge de la retraite. Aide administrative et suivi personnalisé des dossiers de retraite.",
+            "description_ar": "جلسات إعلام وتوجيه للموظفين المقتربين من سن التقاعد. مساعدة إدارية ومتابعة شخصية لملفات التقاعد.",
+            "icon": "BookOpen",
+            "color": "#2D4270",
+            "featured": false
+        }
+    },
+    {
+        "id": 8,
+        "slug": "logement-vacances",
+        "title": {
+            "rendered": "Logements de Vacances"
+        },
+        "title_ar": "مساكن العطل",
+        "acf": {
+            "description_fr": "Accès à des logements de vacances conventionnés à tarifs réduits pour les adhérents et leurs familles dans plusieurs villes du Royaume.",
+            "description_ar": "الوصول إلى مساكن عطل متعاقد عليها بأسعار مخفضة للمنخرطين وعائلاتهم في عدة مدن من المملكة.",
+            "icon": "Home",
+            "color": "#F26522",
+            "featured": false
+        }
+    }
+]

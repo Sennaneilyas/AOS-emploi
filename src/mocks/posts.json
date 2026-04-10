@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "slug": "assemblee-generale-ordinaire-2025",
+        "title": {
+            "rendered": "Assemblée Générale Ordinaire — Session 2025"
+        },
+        "title_ar": "الجمعية العامة العادية — دورة 2025",
+        "excerpt": {
+            "rendered": "L'Association AOS a tenu sa session annuelle ordinaire en présence de ses membres et représentants. Les comptes de l'exercice 2024 ont été approuvés et les orientations stratégiques de 2025 ont été adoptées à l'unanimité."
+        },
+        "excerpt_ar": "عقدت جمعية AOS دورتها السنوية العادية بحضور أعضائها وممثليها، حيث تمت المصادقة على حسابات السنة المالية 2024 واعتماد التوجهات الاستراتيجية لعام 2025 بالإجماع.",
+        "date": "2026-03-20T09:00:00",
+        "category_fr": "Vie Associative",
+        "category_ar": "الحياة الجمعوية",
+        "_embedded": {
+            "wp:featuredmedia": [
+                {
+                    "source_url": "https://placehold.co/800x500/1B2A4A/FFFFFF?text=AOS+AG+2025"
+                }
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "slug": "partenariat-mutuelle-sante-2026",
+        "title": {
+            "rendered": "Nouveau partenariat pour la couverture médicale complémentaire"
+        },
+        "title_ar": "شراكة جديدة للتغطية الصحية التكميلية",
+        "excerpt": {
+            "rendered": "L'AOS a signé une convention de partenariat avec un organisme de mutuelle santé afin d'élargir la couverture médicale de ses adhérents et de leurs familles, avec des tarifs préférentiels négociés."
+        },
+        "excerpt_ar": "أبرمت جمعية AOS اتفاقية شراكة مع هيئة للتعاضد الصحي لتوسيع التغطية الطبية لمنخرطيها وعائلاتهم بأسعار تفضيلية تم التفاوض عليها.",
+        "date": "2026-02-14T10:30:00",
+        "category_fr": "Couverture Médicale",
+        "category_ar": "التغطية الطبية",
+        "_embedded": {
+            "wp:featuredmedia": [
+                {
+                    "source_url": "https://placehold.co/800x500/2D4270/FFFFFF?text=Partenariat+Santé"
+                }
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "slug": "sortie-culturelle-ifrane-2026",
+        "title": {
+            "rendered": "Sortie culturelle et familiale — Ifrane, Printemps 2026"
+        },
+        "title_ar": "رحلة ثقافية وعائلية — إفران، ربيع 2026",
+        "excerpt": {
+            "rendered": "Dans le cadre de ses activités sociales et culturelles, l'AOS organise une sortie familiale à Ifrane pour ses adhérents. Une occasion de renforcer les liens entre collègues et de profiter des espaces naturels de la région."
+        },
+        "excerpt_ar": "في إطار أنشطتها الاجتماعية والثقافية، تنظم جمعية AOS رحلة عائلية إلى إفران لمنخرطيها، وهي فرسة لتوطيد العلاقات بين الزملاء والاستمتاع بالفضاءات الطبيعية في المنطقة.",
+        "date": "2026-01-28T08:00:00",
+        "category_fr": "Activités Culturelles",
+        "category_ar": "الأنشطة الثقافية",
+        "_embedded": {
+            "wp:featuredmedia": [
+                {
+                    "source_url": "https://placehold.co/800x500/121E35/FFFFFF?text=Sortie+Ifrane"
+                }
+            ]
+        }
+    },
+    {
+        "id": 4,
+        "slug": "campagne-aide-scolaire-rentree-2025",
+        "title": {
+            "rendered": "Campagne d'aide scolaire — Rentrée 2025-2026"
+        },
+        "title_ar": "حملة المساعدة المدرسية — الدخول المدرسي 2025-2026",
+        "excerpt": {
+            "rendered": "L'AOS lance sa campagne annuelle d'aide à la scolarisation des enfants des adhérents. Les dossiers de demande sont ouverts du 1er au 30 septembre 2025. Les critères d'éligibilité et les montants alloués sont disponibles au secrétariat."
+        },
+        "excerpt_ar": "تطلق جمعية AOS حملتها السنوية لمساعدة أبناء المنخرطين على التمدرس. تُفتح ملفات الطلبات من 1 إلى 30 شتنبر 2025. معايير الأهلية والمبالغ المخصصة متوفرة بالكتابة.",
+        "date": "2025-09-01T08:00:00",
+        "category_fr": "Aide Sociale",
+        "category_ar": "المساعدة الاجتماعية",
+        "_embedded": {
+            "wp:featuredmedia": [
+                {
+                    "source_url": "https://placehold.co/800x500/1B2A4A/FFFFFF?text=Aide+Scolaire"
+                }
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "slug": "tournoi-sportif-interne-2025",
+        "title": {
+            "rendered": "Tournoi sportif interne — Édition 2025"
+        },
+        "title_ar": "الدوري الرياضي الداخلي — نسخة 2025",
+        "excerpt": {
+            "rendered": "L'AOS organise son tournoi sportif annuel regroupant les équipes des différentes directions du Ministère. Disciplines au programme : football, volleyball et tennis de table. Inscriptions ouvertes jusqu'au 15 mai."
+        },
+        "excerpt_ar": "تنظم جمعية AOS دوريها الرياضي السنوي الذي يجمع فرق مختلف مديريات الوزارة. الرياضات المبرمجة: كرة القدم والكرة الطائرة وكرة الطاولة. التسجيلات مفتوحة حتى 15 ماي.",
+        "date": "2025-05-01T09:00:00",
+        "category_fr": "Sports",
+        "category_ar": "الرياضة",
+        "_embedded": {
+            "wp:featuredmedia": [
+                {
+                    "source_url": "https://placehold.co/800x500/2D4270/FFFFFF?text=Tournoi+Sportif"
+                }
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "slug": "prets-exceptionnels-conditions-2025",
+        "title": {
+            "rendered": "Mise à jour des conditions de prêts exceptionnels 2025"
+        },
+        "title_ar": "تحديث شروط القروض الاستثنائية 2025",
+        "excerpt": {
+            "rendered": "Suite à la décision du bureau exécutif, les plafonds et conditions des prêts exceptionnels accordés aux adhérents ont été révisés pour l'année 2025. Consultez le règlement intérieur mis à jour disponible au siège de l'association."
+        },
+        "excerpt_ar": "إثر قرار المكتب التنفيذي، تم مراجعة سقف وشروط القروض الاستثنائية الممنوحة للمنخرطين لسنة 2025. راجع النظام الداخلي المحدث المتوفر بمقر الجمعية.",
+        "date": "2025-01-15T10:00:00",
+        "category_fr": "Prêts & Finances",
+        "category_ar": "القروض والمالية",
+        "_embedded": {
+            "wp:featuredmedia": [
+                {
+                    "source_url": "https://placehold.co/800x500/121E35/FFFFFF?text=Prêts+2025"
+                }
+            ]
+        }
+    }
+]

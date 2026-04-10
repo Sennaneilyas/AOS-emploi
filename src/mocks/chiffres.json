@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "label_fr": "Adhérents",
+        "label_ar": "منخرط",
+        "value": 1500,
+        "suffix": "+",
+        "icon": "Users",
+        "description_fr": "Fonctionnaires adhérents actifs",
+        "description_ar": "موظفون منخرطون نشطون"
+    },
+    {
+        "id": 2,
+        "label_fr": "Années d'expérience",
+        "label_ar": "سنة خبرة",
+        "value": 20,
+        "suffix": "+",
+        "icon": "CalendarDays",
+        "description_fr": "Au service des fonctionnaires",
+        "description_ar": "في خدمة الموظفين"
+    },
+    {
+        "id": 3,
+        "label_fr": "Services proposés",
+        "label_ar": "خدمة متاحة",
+        "value": 12,
+        "suffix": "",
+        "icon": "Briefcase",
+        "description_fr": "Prestations sociales et culturelles",
+        "description_ar": "خدمات اجتماعية وثقافية"
+    },
+    {
+        "id": 4,
+        "label_fr": "Partenaires",
+        "label_ar": "شريك",
+        "value": 35,
+        "suffix": "+",
+        "icon": "Handshake",
+        "description_fr": "Organismes et institutions partenaires",
+        "description_ar": "هيئات ومؤسسات شريكة"
+    }
+]

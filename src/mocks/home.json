@@ -1,0 +1,53 @@
+{
+    "hero": {
+        "badge_fr": "Association des Œuvres Sociales",
+        "badge_ar": "جمعية الأعمال الاجتماعية",
+        "headline_fr": "Au service des",
+        "headline_highlight_fr": "fonctionnaires",
+        "headline_suffix_fr": "du Ministère",
+        "headline_ar": "في خدمة",
+        "headline_highlight_ar": "موظفي",
+        "headline_suffix_ar": "وزارة التشغيل",
+        "subline_fr": "L'AOS accompagne les agents du Ministère de l'Emploi et de l'Insertion Professionnelle à travers des prestations sociales, culturelles et médicales adaptées à leurs besoins.",
+        "subline_ar": "ترافق جمعية AOS موظفي وزارة التشغيل والإدماج المهني من خلال خدمات اجتماعية وثقافية وطبية تلائم احتياجاتهم.",
+        "cta_primary_fr": "Rejoindre l'AOS",
+        "cta_primary_ar": "انضم إلى الجمعية",
+        "cta_secondary_fr": "Nos services",
+        "cta_secondary_ar": "خدماتنا",
+        "cta_primary_href": "/espace-adherent",
+        "cta_secondary_href": "/services"
+    },
+    "sections": {
+        "actualites": {
+            "title_fr": "Dernières Actualités",
+            "title_ar": "آخر الأخبار",
+            "subtitle_fr": "Restez informé des activités et événements de l'association",
+            "subtitle_ar": "ابقَ على اطلاع بأنشطة وفعاليات الجمعية",
+            "cta_fr": "Voir toutes les actualités",
+            "cta_ar": "عرض جميع الأخبار"
+        },
+        "chiffres": {
+            "title_fr": "L'AOS en chiffres",
+            "title_ar": "الجمعية بالأرقام",
+            "subtitle_fr": "Des décennies d'engagement au service des fonctionnaires",
+            "subtitle_ar": "عقود من الالتزام في خدمة الموظفين"
+        },
+        "services": {
+            "title_fr": "Nos Prestations",
+            "title_ar": "خدماتنا",
+            "subtitle_fr": "Un accompagnement complet pour vous et votre famille",
+            "subtitle_ar": "مرافقة شاملة لك ولعائلتك",
+            "cta_fr": "Voir tous les services",
+            "cta_ar": "عرض جميع الخدمات"
+        },
+        "cta_banner": {
+            "title_fr": "Vous êtes fonctionnaire au Ministère ?",
+            "title_ar": "هل أنت موظف في الوزارة؟",
+            "subtitle_fr": "Rejoignez l'AOS et bénéficiez de l'ensemble de nos prestations sociales, médicales et culturelles dès aujourd'hui.",
+            "subtitle_ar": "انضم إلى جمعية AOS واستفد من جميع خدماتنا الاجتماعية والطبية والثقافية اليوم.",
+            "cta_fr": "Devenir adhérent",
+            "cta_ar": "كيف تنخرط",
+            "cta_href": "/espace-adherent"
+        }
+    }
+}
