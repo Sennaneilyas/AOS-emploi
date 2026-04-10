@@ -1,18 +1,15 @@
-import { Card, Button } from "flowbite-react";
+import { BrowserRouter } from "react-router-dom";
+import { AppRoutes } from "./routes";
+import { LangProvider } from "./context/LangContext";
 
-export default function App() {
+function App() {
   return (
-    <div>
-      <Card>
-        <Card.Body>
-          <p className="text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-          </p>
-        </Card.Body>
-        <Card.Footer>
-          <Button>Click me</Button>
-        </Card.Footer>
-      </Card>
-    </div>
+    <LangProvider>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </LangProvider>
   );
 }
+
+export default App;
