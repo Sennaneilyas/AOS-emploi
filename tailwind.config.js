@@ -1,5 +1,6 @@
 // tailwind.config.js
 import typography from '@tailwindcss/typography'
+import lineClamp from '@tailwindcss/line-clamp'
 import flowbite from 'flowbite/plugin'
 
 /** @type {import('tailwindcss').Config} */
