@@ -121,12 +121,12 @@ function EspaceAdherentPage() {
             </h2>
             <div className="flex gap-4 justify-center">
               <button
-                className="bg-navy text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-150 hover:bg-navy-light"
+                className="bg-brand-orange text-white px-5 py-3 rounded-lg font-semibold transition-colors duration-150 hover:bg-navy-light"
               >
                 {t.loginButton}
               </button>
               <button
-                className="border border-navy text-navy px-6 py-3 rounded-lg font-semibold transition-colors duration-150 hover:bg-navy/5"
+                className="border border-white/30 bg-white/10 text-white px-5 py-3 rounded-lg font-semibold transition-colors duration-150 hover:bg-white/20"
               >
                 {t.signupButton}
               </button>

@@ -39,7 +39,7 @@ function NotFoundPage() {
           <p className="mt-2 text-sm text-gray-500">{t.subtitle}</p>
           <Link
             to="/"
-            className="mt-8 inline-flex rounded-lg bg-navy px-6 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-navy-light"
+            className="mt-8 inline-flex rounded-lg bg-brand-orange px-5 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-navy-light"
           >
             {t.cta}
           </Link>

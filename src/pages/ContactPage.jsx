@@ -120,7 +120,7 @@ function ContactPage() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-navy text-white py-3 rounded-lg font-semibold transition-colors duration-150 hover:bg-navy-light"
+                  className="w-full bg-brand-orange text-white px-5 py-3 rounded-lg font-semibold transition-colors duration-150 hover:bg-navy-light"
                 >
                   {t.submitButton}
                 </button>
