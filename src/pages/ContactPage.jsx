@@ -72,7 +72,7 @@ function ContactPage() {
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className={`block text-base font-semibold text-navy mb-3 ${lang === "ar" ? "font-semibold" : "font-semibold"}`}>
                     {t.nameLabel}
                   </label>
                   <input
@@ -84,7 +84,7 @@ function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className={`block text-base font-semibold text-navy mb-3 ${lang === "ar" ? "font-semibold" : "font-semibold"}`}>
                     {t.emailLabel}
                   </label>
                   <input
@@ -96,7 +96,7 @@ function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className={`block text-base font-semibold text-navy mb-3 ${lang === "ar" ? "font-semibold" : "font-semibold"}`}>
                     {t.phoneLabel}
                   </label>
                   <input
@@ -107,7 +107,7 @@ function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className={`block text-base font-semibold text-navy mb-3 ${lang === "ar" ? "font-semibold" : "font-semibold"}`}>
                     {t.messageLabel}
                   </label>
                   <textarea
