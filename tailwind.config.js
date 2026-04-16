@@ -8,7 +8,7 @@ export default {
   content: [
     './index.html',
     './src/**/*.{js,jsx}',
-    // ← Correct path for flowbite-react 0.12.x (replaces the old tailwind subpath)
+    // Correct path for flowbite-react 0.12.x (replaces the old tailwind subpath)
     './node_modules/flowbite-react/dist/**/*.js',
   ],
   theme: {
@@ -20,7 +20,7 @@ export default {
           dark: '#121E35',
         },
         brand: {
-          orange: '#F26522',   // pending M. KHALISSI confirm
+          orange: '#F26522',
         },
         'gray-soft': '#F4F6F9',
       },

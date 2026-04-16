@@ -12,14 +12,7 @@
         "excerpt_ar": "عقدت جمعية AOS دورتها السنوية العادية بحضور أعضائها وممثليها، حيث تمت المصادقة على حسابات السنة المالية 2024 واعتماد التوجهات الاستراتيجية لعام 2025 بالإجماع.",
         "date": "2026-03-20T09:00:00",
         "category_fr": "Vie Associative",
-        "category_ar": "الحياة الجمعوية",
-        "_embedded": {
-            "wp:featuredmedia": [
-                {
-                    "source_url": "https://placehold.co/800x500/1B2A4A/FFFFFF?text=AOS+AG+2025"
-                }
-            ]
-        }
+        "category_ar": "الحياة الجمعوية"
     },
     {
         "id": 2,
@@ -34,14 +27,7 @@
         "excerpt_ar": "أبرمت جمعية AOS اتفاقية شراكة مع هيئة للتعاضد الصحي لتوسيع التغطية الطبية لمنخرطيها وعائلاتهم بأسعار تفضيلية تم التفاوض عليها.",
         "date": "2026-02-14T10:30:00",
         "category_fr": "Couverture Médicale",
-        "category_ar": "التغطية الطبية",
-        "_embedded": {
-            "wp:featuredmedia": [
-                {
-                    "source_url": "https://placehold.co/800x500/2D4270/FFFFFF?text=Partenariat+Santé"
-                }
-            ]
-        }
+        "category_ar": "التغطية الطبية"
     },
     {
         "id": 3,
@@ -56,14 +42,7 @@
         "excerpt_ar": "في إطار أنشطتها الاجتماعية والثقافية، تنظم جمعية AOS رحلة عائلية إلى إفران لمنخرطيها، وهي فرسة لتوطيد العلاقات بين الزملاء والاستمتاع بالفضاءات الطبيعية في المنطقة.",
         "date": "2026-01-28T08:00:00",
         "category_fr": "Activités Culturelles",
-        "category_ar": "الأنشطة الثقافية",
-        "_embedded": {
-            "wp:featuredmedia": [
-                {
-                    "source_url": "https://placehold.co/800x500/121E35/FFFFFF?text=Sortie+Ifrane"
-                }
-            ]
-        }
+        "category_ar": "الأنشطة الثقافية"
     },
     {
         "id": 4,

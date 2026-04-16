@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import { CalendarDays } from "lucide-react";
 import { useLang } from "../../context/LangContext";
+import actuality1 from "../../assets/images/actuality1.jpg";
+import actuality2 from "../../assets/images/actuality2.jpg";
+import actuality3 from "../../assets/images/actuality3.jpg";
 
+const POST_IMAGES = {
+  "assemblee-generale-ordinaire-2025": actuality1,
+  "partenariat-mutuelle-sante-2026": actuality2,
+  "sortie-culturelle-ifrane-2026": actuality3,
+};
 /**
  * @param {{
  *  post: {
@@ -43,7 +51,10 @@ function PostCard({ post }) {
     : post.excerpt_fr || post.excerpt?.rendered;
   const category = isArabic ? post.category_ar : post.category_fr;
   const image =
-    post.image_url || post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "";
+    post.image_url ||
+    post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+    POST_IMAGES[post.slug] ||
+    "";
 
   return (
     <article className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md">

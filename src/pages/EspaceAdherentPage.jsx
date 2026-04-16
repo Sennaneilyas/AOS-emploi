@@ -126,7 +126,7 @@ function EspaceAdherentPage() {
                 {t.loginButton}
               </button>
               <button
-                className="border border-white/30 bg-white/10 text-white px-5 py-3 rounded-lg font-semibold transition-colors duration-150 hover:bg-white/20"
+                className="border border-white/30 bg-[#2d4270] text-white px-5 py-3 rounded-lg font-semibold transition-colors duration-150 hover:bg-[#f26522]"
               >
                 {t.signupButton}
               </button>
