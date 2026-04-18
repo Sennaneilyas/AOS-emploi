@@ -7,7 +7,7 @@ function PageWrapper({ children }) {
   const { lang } = useLang();
 
   return (
-    <div className="min-h-screen bg-navy text-gray-900">
+    <div className="min-h-screen bg-white text-gray-900">
       <Navbar />
       <AnimatePresence mode="wait">
         <motion.main

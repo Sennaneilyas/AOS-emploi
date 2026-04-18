@@ -82,23 +82,22 @@ function ContactPage() {
   return (
     <PageWrapper>
       {/* Header Section */}
-      <section className="bg-gray-soft py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-navy pt-32 pb-16 md:pt-40 md:pb-24 text-white">
+        <div className="max-w-7xl mx-auto px-4 text-center sm:px-6 lg:px-8">
           <h1
-            className={`text-3xl md:text-4xl lg:text-5xl text-navy ${
-              lang === "ar" ? "font-semibold" : "font-bold"
-            }`}
+            className={`text-3xl md:text-4xl lg:text-5xl ${lang === "ar" ? "font-semibold" : "font-bold"
+              }`}
           >
             {t.title}
           </h1>
-          <p className="mt-4 text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-base md:text-lg text-white/80 max-w-2xl mx-auto">
             {t.subtitle}
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-3">
             {/* Contact Form - Takes 2 columns */}
@@ -109,7 +108,7 @@ function ContactPage() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-semibold text-white mb-2"
+                      className="block text-sm font-semibold text-gray-700 mb-2"
                     >
                       {t.nameLabel}
                     </label>
@@ -149,7 +148,7 @@ function ContactPage() {
                   <div>
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-semibold text-white mb-2"
+                      className="block text-sm font-semibold text-gray-700 mb-2"
                     >
                       {t.phoneLabel}
                     </label>
@@ -168,7 +167,7 @@ function ContactPage() {
                   <div>
                     <label
                       htmlFor="subject"
-                      className="block text-sm font-semibold text-white mb-2"
+                      className="block text-sm font-semibold text-gray-700 mb-2"
                     >
                       {t.subjectLabel}
                     </label>
@@ -189,7 +188,7 @@ function ContactPage() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-semibold text-white mb-2"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
                   >
                     {t.messageLabel}
                   </label>
@@ -219,9 +218,8 @@ function ContactPage() {
             <div className="lg:col-span-1">
               <div className="bg-gray-soft rounded-2xl p-6 md:p-8 space-y-8">
                 <h2
-                  className={`text-xl text-navy mb-6 ${
-                    lang === "ar" ? "font-semibold" : "font-bold"
-                  }`}
+                  className={`text-xl text-navy mb-6 ${lang === "ar" ? "font-semibold" : "font-bold"
+                    }`}
                 >
                   {t.contactInfo}
                 </h2>

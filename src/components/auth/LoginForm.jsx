@@ -121,10 +121,13 @@ function LoginForm() {
       </button>
 
       {import.meta.env.DEV && (
-        <div className="rounded-md border border-dashed border-gray-200 bg-gray-50 px-3 py-2 text-xs text-gray-400">
-          <strong className="text-gray-500">Mock</strong> — email :{" "}
-          <code>ilyas@ministere.gov.ma</code> · clé :{" "}
-          <code>AOS-2026-K7X3-M9QP</code>
+        <div className="rounded-lg border border-navy/10 bg-navy/5 px-4 py-3 text-xs text-navy/70">
+          <div className="flex items-center gap-2 mb-1.5">
+            <div className="h-1.5 w-1.5 rounded-full bg-navy/40" />
+            <strong className="font-semibold text-navy/90 uppercase tracking-wider text-[10px]">Mock Access</strong>
+          </div>
+          <p>Email: <code className="font-mono text-navy">ilyas@ministere.gov.ma</code></p>
+          <p>Key: <code className="font-mono text-navy">AOS-2026-K7X3-M9QP</code></p>
         </div>
       )}
     </form>

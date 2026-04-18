@@ -55,85 +55,97 @@ export default function AuthPage() {
 
   return (
     <PageWrapper>
-      <section className="flex min-h-screen items-start justify-center bg-gray-soft py-16 md:py-24">
-        <div className="mx-auto w-full max-w-md px-4 sm:px-6">
-
-          {/* Tagline */}
-          <p className="mb-8 text-center text-sm text-gray-500">
+      {/* Header Section */}
+      <section className="bg-navy pt-32 pb-16 md:pt-32 md:pb-24 text-white">
+        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <motion.h1
+            key={tab}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`text-3xl md:text-4xl ${lang === "ar" ? "font-semibold" : "font-bold"}`}
+          >
+            {tab === 0 ? t.loginTab : t.registerTab}
+          </motion.h1>
+          <p className="mt-4 text-sm text-white/60 max-w-md mx-auto">
             {t.tagline}
           </p>
+        </div>
+      </section>
 
-          {/* Card */}
-          <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
+      {/* Form Section */}
+      <section className="bg-gray-soft pt-8 pb-24 md:pt-12">
+        <div className="mx-auto w-full max-w-md px-4 sm:px-6">
+          <div className="relative z-10">
+            {/* Card */}
+            <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-xl shadow-navy/[0.03]">
+              {/* Tabs */}
+              <div className="flex border-b border-gray-100 bg-gray-50/30">
+                {[t.loginTab, t.registerTab].map((label, i) => (
+                  <button
+                    key={label}
+                    type="button"
+                    onClick={() => switchTab(i)}
+                    className={`relative flex-1 py-4 text-sm font-semibold transition-all duration-200 ${tab === i
+                      ? "text-navy bg-white"
+                      : "text-gray-400 hover:text-gray-600 hover:bg-white/50"
+                      }`}
+                  >
+                    {label}
+                    {tab === i && (
+                      <motion.span
+                        layoutId="tab-underline"
+                        className="absolute bottom-0 start-0 end-0 h-0.5 bg-navy"
+                        transition={{ type: "spring", stiffness: 500, damping: 35 }}
+                      />
+                    )}
+                  </button>
+                ))}
+              </div>
 
-            {/* Tabs */}
-            <div className="flex border-b border-gray-100">
-              {[t.loginTab, t.registerTab].map((label, i) => (
-                <button
-                  key={label}
-                  type="button"
-                  onClick={() => switchTab(i)}
-                  className={`relative flex-1 py-3.5 text-sm font-semibold transition-colors duration-150 ${
-                    tab === i
-                      ? "text-navy"
-                      : "text-gray-400 hover:text-gray-600"
-                  }`}
-                >
-                  {label}
-                  {tab === i && (
-                    <motion.span
-                      layoutId="tab-underline"
-                      className="absolute bottom-0 start-0 end-0 h-0.5 rounded-full bg-navy"
-                      transition={{ type: "spring", stiffness: 500, damping: 35 }}
-                    />
-                  )}
-                </button>
-              ))}
+              {/* Form area */}
+              <div className="overflow-hidden p-6 md:p-8">
+                <AnimatePresence mode="wait" custom={direction}>
+                  <motion.div
+                    key={tab}
+                    custom={direction}
+                    variants={tabContentVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                  >
+                    {tab === 0 ? <LoginForm /> : <RegisterForm />}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </div>
 
-            {/* Form area */}
-            <div className="overflow-hidden p-6">
-              <AnimatePresence mode="wait" custom={direction}>
-                <motion.div
-                  key={tab}
-                  custom={direction}
-                  variants={tabContentVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                >
-                  {tab === 0 ? <LoginForm /> : <RegisterForm />}
-                </motion.div>
-              </AnimatePresence>
-            </div>
+            {/* Bottom switch link */}
+            <p className="mt-8 text-center text-sm text-gray-500">
+              {tab === 0 ? (
+                <>
+                  {t.noAccount}{" "}
+                  <button
+                    type="button"
+                    onClick={() => switchTab(1)}
+                    className="font-bold text-navy hover:text-orange-500 transition-colors underline underline-offset-4"
+                  >
+                    {t.registerTab}
+                  </button>
+                </>
+              ) : (
+                <>
+                  {t.hasAccount}{" "}
+                  <button
+                    type="button"
+                    onClick={() => switchTab(0)}
+                    className="font-bold text-navy hover:text-orange-500 transition-colors underline underline-offset-4"
+                  >
+                    {t.loginTab}
+                  </button>
+                </>
+              )}
+            </p>
           </div>
-
-          {/* Bottom switch link */}
-          <p className="mt-5 text-center text-sm text-gray-500">
-            {tab === 0 ? (
-              <>
-                {t.noAccount}
-                <button
-                  type="button"
-                  onClick={() => switchTab(1)}
-                  className="font-semibold text-navy underline underline-offset-2 hover:text-navy-light"
-                >
-                  {t.registerTab}
-                </button>
-              </>
-            ) : (
-              <>
-                {t.hasAccount}
-                <button
-                  type="button"
-                  onClick={() => switchTab(0)}
-                  className="font-semibold text-navy underline underline-offset-2 hover:text-navy-light"
-                >
-                  {t.loginTab}
-                </button>
-              </>
-            )}
-          </p>
         </div>
       </section>
     </PageWrapper>

@@ -51,7 +51,7 @@ function HeroSection() {
                 {badge}
               </span>
               <h1
-                className={`mt-4 text-3xl md:text-4xl lg:text-5xl ${isArabic ? "font-semibold" : "font-bold"}`}
+                className={`mt-4 text-3xl sm:text-4xl lg:text-5xl ${isArabic ? "font-semibold" : "font-bold"}`}
               >
                 <span>{headline[0]}</span>
                 <span className="text-brand-orange mx-1">{headline[1]}</span>

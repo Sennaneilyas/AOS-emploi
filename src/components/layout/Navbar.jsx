@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useLang } from "../../context/LangContext";
@@ -46,7 +46,7 @@ const content = {
   },
 };
 
-function DesktopDropdown({ label, children, scrolled }) {
+function DesktopDropdown({ label, children, scrolled, useWhiteText }) {
   const [open, setOpen] = useState(false);
   const timeout = useRef(null);
 
@@ -70,12 +70,14 @@ function DesktopDropdown({ label, children, scrolled }) {
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center gap-1 text-sm font-medium text-gray-600 transition-colors duration-150 hover:text-gray-900"
+        className={`inline-flex items-center gap-1 text-sm font-medium transition-colors duration-200 ${
+          useWhiteText ? "text-white/90 hover:text-white" : "text-gray-600 hover:text-navy"
+        }`}
       >
         {label}
         <ChevronDown
           size={14}
-          className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`transition-transform duration-200 ${open ? "rotate-180" : ""} ${useWhiteText ? "text-white/70" : "text-gray-400"}`}
         />
       </button>
 
@@ -153,9 +155,14 @@ function MobileDropdown({ label, children, onNavigate }) {
 
 function Navbar() {
   const { lang, setLang } = useLang();
+  const location = useLocation();
   const t = content[lang];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const isHome = location.pathname === "/";
+  const isTransparent = !scrolled && !isMobileMenuOpen;
+  const useWhiteText = isTransparent;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -176,24 +183,24 @@ function Navbar() {
 
   return (
     <header
-      className={`sticky z-50 transition-all duration-300 ease-out ${
+      className={`fixed z-50 transition-all duration-500 ease-in-out ${
         scrolled && !isMobileMenuOpen
-          ? "top-4 mx-auto max-w-[calc(100%-2rem)] rounded-xl bg-white/90 border border-gray-200/60 shadow-md shadow-black/5 backdrop-blur"
-          : "top-0 w-full bg-white/80 border-b border-white/20 shadow-sm shadow-black/5 backdrop-blur"
+          ? "top-4 left-0 right-0 mx-auto max-w-[calc(100%-2rem)] rounded-2xl bg-white/90 border border-gray-200/60 shadow-lg shadow-black/5 backdrop-blur-md"
+          : "top-0 left-0 w-full bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
         <div
           className={`flex items-center justify-between gap-4 transition-all duration-300 ease-out ${scrolled ? "min-h-12" : "min-h-16"}`}
         >
           <Link
             to="/"
-            className="flex items-center gap-2 text-lg font-bold text-navy transition-transform duration-300"
+            className="flex items-center gap-2 transition-transform duration-300"
           >
             <img
               src={logo}
               alt={t.brand}
-              className={`w-auto transition-all duration-300 ${scrolled ? "h-10" : "h-14"}`}
+              className={`w-auto transition-all duration-300 ${scrolled ? "h-10" : "h-14"} ${useWhiteText ? "brightness-0 invert" : ""}`}
             />
             <span className="sr-only">{t.brand}</span>
           </Link>
@@ -207,16 +214,19 @@ function Navbar() {
                   label={link.label}
                   children={link.children}
                   scrolled={scrolled}
+                  useWhiteText={useWhiteText}
                 />
               ) : (
                 <NavLink
                   key={link.to}
                   to={link.to}
                   className={({ isActive }) =>
-                    `text-sm font-medium transition-colors duration-150 ${
-                      isActive
-                        ? "text-black font-semibold"
-                        : "text-gray-600 hover:text-gray-900"
+                    `text-sm font-medium transition-colors duration-200 ${
+                      useWhiteText
+                        ? isActive ? "text-white" : "text-white/70 hover:text-white"
+                        : isActive
+                          ? "text-navy font-semibold underline decoration-orange-500 decoration-2 underline-offset-8"
+                          : "text-gray-600 hover:text-navy"
                     }`
                   }
                 >
@@ -229,17 +239,25 @@ function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               to="/espace-adherent"
-              className="hidden rounded-lg bg-navy px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-navy-light md:inline-flex"
+              className={`hidden rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-300 md:inline-flex ${
+                useWhiteText 
+                  ? "bg-white text-navy hover:bg-white/90" 
+                  : "bg-navy text-white hover:bg-navy-light"
+              }`}
             >
               {t.adherent}
             </Link>
 
-            <div className="hidden h-5 w-px bg-gray-200 md:block" />
+            <div className={`hidden h-5 w-px md:block ${useWhiteText ? "bg-white/20" : "bg-gray-200"}`} />
 
-            <div className="hidden items-center gap-3 rounded-full border border-gray-200/70 bg-white px-3 py-1.5 sm:inline-flex">
+            <div className={`hidden items-center gap-3 rounded-full border px-3 py-1.5 sm:inline-flex transition-colors duration-300 ${
+              isTransparent ? "border-gray-200/20 bg-black/5" : (useWhiteText ? "border-white/20 bg-white/10" : "border-gray-200/70 bg-white")
+            }`}>
               <span
                 className={`text-xs font-bold transition-colors ${
-                  lang === "fr" ? "text-navy" : "text-gray-400"
+                  lang === "fr" 
+                    ? (useWhiteText ? "text-white" : "text-navy") 
+                    : (useWhiteText ? "text-white/40" : "text-gray-400")
                 }`}
               >
                 FR
@@ -252,7 +270,9 @@ function Navbar() {
               />
               <span
                 className={`text-xs font-bold transition-colors ${
-                  lang === "ar" ? "text-navy" : "text-gray-400"
+                  lang === "ar" 
+                    ? (useWhiteText ? "text-white" : "text-navy") 
+                    : (useWhiteText ? "text-white/40" : "text-gray-400")
                 }`}
               >
                 AR
@@ -261,7 +281,11 @@ function Navbar() {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen((value) => !value)}
-              className="inline-flex rounded-lg border border-gray-200/70 p-2 text-gray-700 transition-all duration-300 hover:text-gray-900 lg:hidden"
+              className={`inline-flex rounded-lg border p-2 transition-all duration-300 lg:hidden ${
+                useWhiteText 
+                  ? "border-white/20 text-white hover:bg-white/10" 
+                  : "border-gray-200/70 text-gray-700 hover:text-navy hover:bg-gray-50"
+              }`}
               aria-expanded={isMobileMenuOpen}
               aria-label={
                 isMobileMenuOpen

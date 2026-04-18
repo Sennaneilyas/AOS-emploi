@@ -51,19 +51,23 @@ function ServicesPage() {
 
   return (
     <PageWrapper>
-      <section className="bg-white py-16 md:py-32">
+      <section className="bg-navy pt-32 pb-16 md:pt-40 md:pb-24 text-white">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <AnimatedContainer className="mx-auto max-w-3xl text-center">
-            <h1 className={`text-3xl font-bold tracking-tight text-navy md:text-5xl ${isArabic ? "font-semibold" : "font-extrabold"}`}>
+            <h1 className={`text-3xl font-bold tracking-tight md:text-5xl ${isArabic ? "font-semibold" : "font-extrabold"}`}>
               {t.title}
             </h1>
-            <p className="mt-6 text-base leading-7 text-gray-600 md:text-lg">
+            <p className="mt-6 text-base leading-7 text-white/80 md:text-lg">
               {t.subtitle}
             </p>
           </AnimatedContainer>
+        </div>
+      </section>
 
-          <div className="mt-16 md:mt-24">
+      <section className="bg-white pb-16 md:pb-24">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mt-8 md:mt-12 relative z-10">
             {loading ? (
               <div className="flex items-center justify-center py-20">
                 <div className="h-10 w-10 animate-spin rounded-full border-4 border-navy border-t-transparent" />
@@ -80,7 +84,7 @@ function ServicesPage() {
                 {services.map((service, i) => {
                   const iconName = service.acf?.icon || "Circle";
                   const Icon = Icons[iconName] || Icons.Circle;
-                  
+
                   // Map the service to its detail slug
                   const slugMap = {
                     "Aide Sociale": "aide-sociale",
@@ -112,9 +116,9 @@ function ServicesPage() {
                   };
 
                   return (
-                    <FeatureCard 
-                      key={service.id} 
-                      feature={feature} 
+                    <FeatureCard
+                      key={service.id}
+                      feature={feature}
                       to={`/services/${slug}`}
                       className={cn(
                         "border-gray-100",

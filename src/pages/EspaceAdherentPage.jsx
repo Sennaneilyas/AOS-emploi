@@ -82,24 +82,24 @@ function EspaceAdherentPage() {
   return (
     <PageWrapper>
       {/* Header */}
-      <section className="bg-gray-soft py-16">
+      <section className="bg-navy pt-32 pb-16 md:pt-40 md:pb-24 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-start">
+          <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-start">
             <div>
-              <h1 className={`text-4xl text-navy md:text-5xl ${isArabic ? "font-semibold" : "font-bold"}`}>
+              <h1 className={`text-3xl md:text-4xl ${isArabic ? "font-semibold" : "font-bold"}`}>
                 {t.title}
               </h1>
-              <p className="mt-2 text-base text-gray-600">
+              <p className="mt-4 text-sm text-white/70">
                 {t.subtitle}
                 {user?.nom && (
-                  <span className="font-medium text-navy">, {user.nom}</span>
+                  <span className="font-medium text-white">, {user.nom}</span>
                 )}
               </p>
             </div>
             <button
               type="button"
               onClick={logout}
-              className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-600 transition-colors duration-150 hover:border-red-200 hover:text-red-600"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-medium text-white transition-colors duration-150 hover:bg-white hover:text-navy"
             >
               <LogOut size={16} />
               {t.logoutLabel}
@@ -109,15 +109,15 @@ function EspaceAdherentPage() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-16 md:py-24">
+      <section className="bg-gray-soft pt-8 pb-16 md:pt-12 md:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="relative z-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {t.features.map((feature) => {
               const IconComponent = feature.icon;
               return (
                 <div
                   key={feature.title}
-                  className="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow duration-200 hover:shadow-md"
+                  className="rounded-2xl border border-gray-100 bg-white p-8 shadow-xl shadow-navy/5 transition-shadow duration-200 hover:shadow-2xl hover:shadow-navy/10"
                 >
                   <IconComponent className="mb-4 h-8 w-8 text-navy" />
                   <h3 className={`mb-2 text-lg text-navy ${isArabic ? "font-semibold" : "font-bold"}`}>
@@ -130,6 +130,7 @@ function EspaceAdherentPage() {
           </div>
         </div>
       </section>
+
     </PageWrapper>
   );
 }
