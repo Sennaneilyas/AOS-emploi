@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useLang } from "../../context/LangContext";
+import { Switch } from "../ui/switch";
 import logo from "../../../public/logo.png";
 
 const content = {
@@ -225,39 +226,37 @@ function Navbar() {
             )}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <Link
               to="/espace-adherent"
               className="hidden rounded-lg bg-navy px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-navy-light md:inline-flex"
             >
               {t.adherent}
             </Link>
-            <div className="hidden items-center gap-2 rounded-lg border border-gray-200/70 bg-white p-1 sm:inline-flex">
-              <span className="px-2 text-xs font-medium text-gray-500">
-                {t.languageLabel}
-              </span>
-              <button
-                type="button"
-                onClick={() => setLang("fr")}
-                className={`rounded-md px-2.5 py-1.5 text-xs font-semibold transition-colors duration-150 ${
-                  lang === "fr"
-                    ? "bg-navy text-white"
-                    : "text-gray-600 hover:text-gray-900"
+
+            <div className="hidden h-5 w-px bg-gray-200 md:block" />
+
+            <div className="hidden items-center gap-3 rounded-full border border-gray-200/70 bg-white px-3 py-1.5 sm:inline-flex">
+              <span
+                className={`text-xs font-bold transition-colors ${
+                  lang === "fr" ? "text-navy" : "text-gray-400"
                 }`}
               >
                 FR
-              </button>
-              <button
-                type="button"
-                onClick={() => setLang("ar")}
-                className={`rounded-md px-2.5 py-1.5 text-xs font-semibold transition-colors duration-150 ${
-                  lang === "ar"
-                    ? "bg-navy text-white"
-                    : "text-gray-600 hover:text-gray-900"
+              </span>
+              <Switch
+                checked={lang === "ar"}
+                onCheckedChange={(checked) => setLang(checked ? "ar" : "fr")}
+                size="sm"
+                aria-label={t.languageLabel}
+              />
+              <span
+                className={`text-xs font-bold transition-colors ${
+                  lang === "ar" ? "text-navy" : "text-gray-400"
                 }`}
               >
                 AR
-              </button>
+              </span>
             </div>
             <button
               type="button"
@@ -322,33 +321,31 @@ function Navbar() {
               {t.adherent}
             </Link>
 
-            <div className="mt-4 inline-flex items-center justify-between rounded-lg border border-gray-200/70 p-1.5">
-              <span className="px-2 text-xs font-medium text-gray-500">
+            <div className="mt-4 flex items-center justify-between rounded-lg border border-gray-200/70 bg-gray-50/50 p-3">
+              <span className="text-sm font-medium text-gray-700">
                 {t.languageLabel}
               </span>
-              <div className="inline-flex items-center gap-1">
-                <button
-                  type="button"
-                  onClick={() => setLang("fr")}
-                  className={`rounded-md px-2.5 py-1.5 text-xs font-semibold transition-colors duration-150 ${
-                    lang === "fr"
-                      ? "bg-navy text-white"
-                      : "text-gray-600 hover:text-gray-900"
+              <div className="flex items-center gap-3 rounded-full bg-white px-3 py-1.5 shadow-sm border border-gray-100">
+                <span
+                  className={`text-xs font-bold transition-colors ${
+                    lang === "fr" ? "text-navy" : "text-gray-400"
                   }`}
                 >
                   FR
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setLang("ar")}
-                  className={`rounded-md px-2.5 py-1.5 text-xs font-semibold transition-colors duration-150 ${
-                    lang === "ar"
-                      ? "bg-navy text-white"
-                      : "text-gray-600 hover:text-gray-900"
+                </span>
+                <Switch
+                  checked={lang === "ar"}
+                  onCheckedChange={(checked) => setLang(checked ? "ar" : "fr")}
+                  size="sm"
+                  aria-label={t.languageLabel}
+                />
+                <span
+                  className={`text-xs font-bold transition-colors ${
+                    lang === "ar" ? "text-navy" : "text-gray-400"
                   }`}
                 >
                   AR
-                </button>
+                </span>
               </div>
             </div>
           </nav>
