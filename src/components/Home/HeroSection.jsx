@@ -20,7 +20,7 @@ function HeroSection() {
   const visual = heroVisualContent[lang];
 
   return (
-    <section className="relative h-dvh overflow-hidden bg-navy text-white">
+    <section className="relative min-h-[100dvh] overflow-hidden bg-navy text-white">
       <div className="pointer-events-none absolute inset-0">
         <div
           className="absolute inset-0 bg-gradient-to-b from-navy to-navy-dark"
@@ -43,7 +43,7 @@ function HeroSection() {
           aria-hidden
         />
       </div>
-      <div className="relative flex h-dvh items-center">
+      <div className="relative flex min-h-[100dvh] items-center pt-24 pb-12 lg:pt-0 lg:pb-0">
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-8 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
             <div className="text-center lg:text-start">

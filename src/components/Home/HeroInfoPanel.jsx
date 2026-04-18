@@ -102,14 +102,14 @@ function HeroInfoPanel() {
   return (
     <div className="flex w-full max-w-md mx-auto lg:mx-0 lg:max-w-xl select-none items-center justify-center gap-3 sm:gap-4">
       {/* ─ Left: icon grid ── */}
-      <div className="flex gap-1.5 sm:gap-2 flex-shrink-0">
+      <div className="flex gap-1 sm:gap-2 flex-shrink-0">
         {/* Column 1 */}
-        <div className="flex flex-col gap-1.5 sm:gap-2">
+        <div className="flex flex-col gap-1 sm:gap-2">
           {col1.map((service) => (
             <ServiceCard
               key={service.id}
               service={service}
-              className="w-[65px] h-[72px] sm:w-[85px] sm:h-[95px] md:w-[100px] md:h-[110px]"
+              className="w-[50px] h-[55px] sm:w-[85px] sm:h-[95px] md:w-[100px] md:h-[110px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
@@ -117,12 +117,12 @@ function HeroInfoPanel() {
         </div>
 
         {/* Column 2 — offset */}
-        <div className="flex flex-col gap-1.5 sm:gap-2 mt-6 sm:mt-10 md:mt-14">
+        <div className="flex flex-col gap-1 sm:gap-2 mt-4 sm:mt-10 md:mt-14">
           {col2.map((service) => (
             <ServiceCard
               key={service.id}
               service={service}
-              className="w-[72px] h-[80px] sm:w-[95px] sm:h-[105px] md:w-[115px] md:h-[125px]"
+              className="w-[55px] h-[60px] sm:w-[95px] sm:h-[105px] md:w-[115px] md:h-[125px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
@@ -130,12 +130,12 @@ function HeroInfoPanel() {
         </div>
 
         {/* Column 3 — offset */}
-        <div className="flex flex-col gap-1.5 sm:gap-2 mt-3 sm:mt-5 md:mt-7">
+        <div className="flex flex-col gap-1 sm:gap-2 mt-2 sm:mt-5 md:mt-7">
           {col3.map((service) => (
             <ServiceCard
               key={service.id}
               service={service}
-              className="w-[68px] h-[76px] sm:w-[90px] sm:h-[100px] md:w-[108px] md:h-[118px]"
+              className="w-[52px] h-[58px] sm:w-[90px] sm:h-[100px] md:w-[108px] md:h-[118px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
             />
@@ -225,7 +225,7 @@ function ServiceRow({ service, hoveredId, onHover }) {
         />
         <span
           className={cn(
-            "text-[11px] sm:text-sm md:text-base font-semibold leading-none tracking-tight transition-colors duration-300",
+            "text-[10px] sm:text-sm md:text-base font-semibold leading-none tracking-tight transition-colors duration-300",
             isActive ? "text-white" : "text-white/60"
           )}
         >

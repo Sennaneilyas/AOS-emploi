@@ -185,8 +185,10 @@ function Navbar() {
     <header
       className={`fixed z-50 transition-all duration-500 ease-in-out ${
         scrolled && !isMobileMenuOpen
-          ? "top-4 left-0 right-0 mx-auto max-w-[calc(100%-2rem)] rounded-2xl bg-white/90 border border-gray-200/60 shadow-lg shadow-black/5 backdrop-blur-md"
-          : "top-0 left-0 w-full bg-transparent border-b border-transparent"
+          ? "top-4 left-0 right-0 mx-auto max-w-[calc(100%-2rem)] rounded-2xl bg-white/60 border border-white/40 shadow-lg shadow-black/5 backdrop-blur-lg saturate-150"
+          : isMobileMenuOpen
+            ? "top-0 left-0 w-full bg-white border-b border-gray-200 shadow-sm"
+            : "top-0 left-0 w-full bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
