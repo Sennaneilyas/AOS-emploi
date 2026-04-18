@@ -4,6 +4,7 @@ import StatutsPage from "../components/about/StatutsPage";
 import ReglementPage from "../components/about/ReglementPage";
 import BureauPage from "../components/about/BureauPage";
 import ServicesPage from "../pages/ServicesPage";
+import ServiceDetailPage from "../pages/ServiceDetailPage";
 import BlogPage from "../pages/BlogPage";
 import ContactPage from "../pages/ContactPage";
 import AuthPage from "../pages/AuthPage";
@@ -19,6 +20,7 @@ export function AppRoutes() {
       <Route path="/about/reglement" element={<ReglementPage />} />
       <Route path="/about/bureau" element={<BureauPage />} />
       <Route path="/services" element={<ServicesPage />} />
+      <Route path="/services/:slug" element={<ServiceDetailPage />} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/blog/:slug" element={<Navigate to="/blog" replace />} />
       <Route path="/contact" element={<ContactPage />} />

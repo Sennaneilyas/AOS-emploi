@@ -4,8 +4,6 @@ import { useLang } from "../context/LangContext";
 import useAuth from "../hooks/useAuth";
 import { User, FileText, Bell, HelpCircle, Settings, LogOut } from "lucide-react";
 
-/* ── Translations ──────────────────────────────────────────────────────── */
-
 const content = {
   fr: {
     title: "Espace Adhérent",
@@ -73,7 +71,6 @@ const content = {
   },
 };
 
-/* ── Component ─────────────────────────────────────────────────────────── */
 
 function EspaceAdherentPage() {
   const { lang } = useLang();
