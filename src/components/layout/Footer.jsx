@@ -11,9 +11,9 @@ const content = {
       {
         title: "Association",
         links: [
-          { to: "/about", label: "À propos" },
+          { to: "/about/statuts", label: "À propos" },
           { to: "/services", label: "Services" },
-          { to: "/blog", label: "Actualités" },
+          { to: "/actualites", label: "Actualités" },
         ],
       },
       {
@@ -35,7 +35,7 @@ const content = {
     copyright: "Tous droits réservés.",
     bottomLinks: [
       { to: "/contact", label: "Contact" },
-      { to: "/about", label: "Mentions institutionnelles" },
+      { to: "/about/statuts", label: "Mentions institutionnelles" },
     ],
   },
   ar: {
@@ -45,9 +45,9 @@ const content = {
       {
         title: "الجمعية",
         links: [
-          { to: "/about", label: "من نحن" },
+          { to: "/about/statuts", label: "من نحن" },
           { to: "/services", label: "الخدمات" },
-          { to: "/blog", label: "الأخبار" },
+          { to: "/actualites", label: "الأخبار" },
         ],
       },
       {
@@ -69,7 +69,7 @@ const content = {
     copyright: "جميع الحقوق محفوظة.",
     bottomLinks: [
       { to: "/contact", label: "اتصل بنا" },
-      { to: "/about", label: "معلومات مؤسساتية" },
+      { to: "/about/statuts", label: "معلومات مؤسساتية" },
     ],
   },
 };

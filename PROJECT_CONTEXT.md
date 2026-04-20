@@ -205,17 +205,15 @@ This lets the frontend run completely independently before WordPress is live.
 
 | Page / Section | Route | WP Endpoint / Status |
 |---|---|---|
-| Home | `/` | Stub |
-| Cadre Associatif (Statuts, Règlement, Bureau) | `/about/*` | Built (Using Static `data/cadreAssociatifContent.js`) |
-| Services | `/services` | Stub |
-| Blog list | `/blog` | Stub |
-| Blog post | `/blog/:slug` | Stub |
-| Contact | `/contact` | Stub |
-| Auth Page (Login/Register) | `/auth` | Built (Using Mock JWT) |
+| Home | `/` | Built (Mock Data) |
+| Cadre Associatif (Statuts, Règlement, Bureau) | `/about/*` | Built (Static Content) |
+| Services | `/services` | Built (Mock Data) |
+| Actualités (News) | `/actualites` | **In Progress 🚧** |
+| Actualités detail | `/actualites/:slug` | Stub |
+| Contact | `/contact` | Built (Functional Form) |
+| Auth Page (Login/Register) | `/auth` | Built (Mock JWT) |
 | Espace Adhérent | `/espace-adherent` | Built (Protected Route) |
-| 404 | `*` | Stub |
-
-*(Note: The Portfolio page was removed to keep the architecture clean since it wasn't required.)*
+| 404 | `*` | Built |
 
 ---
 
@@ -238,17 +236,18 @@ This lets the frontend run completely independently before WordPress is live.
 - [x] LangContext wired + RTL logic
 - [x] Base routing set up
 
-### Phase 2 — Core Pages & Auth (In Progress 🚧)
+### Phase 2 — Core Pages & Auth (Complete ✅)
 - [x] Auth Layer (LoginForm, RegisterForm, JWT simulation, ProtectedRoutes)
 - [x] Cadre Associatif dropdown (Statuts, Règlement Intérieur, Bureau Dirigeant pages + DocumentLayout)
-- [ ] HomePage (Hero + Actualités + ChiffresClés)
-- [ ] ServicesPage
+- [x] HomePage (Hero + Actualités + ChiffresClés + ServicesSection + CTABanner)
+- [x] ServicesPage (Grid with logic for slugs)
 
-### Phase 3 — Content Pages
-- [ ] BlogPage + BlogPostPage
-- [ ] ContactPage (React Hook Form + Sonner)
+### Phase 3 — Content Pages (In Progress 🚧)
+- [ ] ActualitiesPage (List view with mock data)
+- [ ] ActualitiesDetail (Single view)
+- [x] ContactPage (Form + Sonner validation)
 
-### Phase 4 — Polish + Integration
+### Phase 4 — Polish + Integration (Pending ⏳)
 - [ ] Connect real WP API (IS_MOCK = false)
 - [ ] cPanel deployment
 

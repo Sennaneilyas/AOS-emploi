@@ -5,7 +5,7 @@ import ReglementPage from "../components/about/ReglementPage";
 import BureauPage from "../components/about/BureauPage";
 import ServicesPage from "../pages/ServicesPage";
 import ServiceDetailPage from "../pages/ServiceDetailPage";
-import BlogPage from "../pages/BlogPage";
+import ActualitiesPage from "../pages/ActualitiesPage";
 import ContactPage from "../pages/ContactPage";
 import AuthPage from "../pages/AuthPage";
 import EspaceAdherentPage from "../pages/EspaceAdherentPage";
@@ -21,8 +21,8 @@ export function AppRoutes() {
       <Route path="/about/bureau" element={<BureauPage />} />
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/services/:slug" element={<ServiceDetailPage />} />
-      <Route path="/blog" element={<BlogPage />} />
-      <Route path="/blog/:slug" element={<Navigate to="/blog" replace />} />
+      <Route path="/actualites" element={<ActualitiesPage />} />
+      <Route path="/actualites/:slug" element={<Navigate to="/actualites" replace />} />
       <Route path="/contact" element={<ContactPage />} />
 
       {/* Auth */}

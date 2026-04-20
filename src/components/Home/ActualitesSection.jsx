@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PostList from "../blog/PostList";
+import PostList from "../actualities/PostList";
 import SectionTitle from "../common/SectionTitle";
 import SkeletonCard from "../common/SkeletonCard";
 import ErrorBanner from "../common/ErrorBanner";
@@ -46,7 +46,7 @@ function ActualitesSection({ posts, loading, error, onRetry }) {
 
         <div className="mt-10 text-center">
           <Link
-            to="/blog"
+            to="/actualites"
             className="inline-flex rounded-lg border border-navy px-6 py-3 text-sm font-semibold text-navy transition-colors duration-150 hover:bg-navy hover:text-white"
           >
             {cta}

@@ -74,13 +74,13 @@ function PostCard({ post }) {
           </span>
         </div>
         <h3 className={`mt-4 text-xl text-navy ${isArabic ? "font-semibold" : "font-bold"}`}>
-          <Link to={`/blog/${post.slug}`} className="hover:underline">
+          <Link to={`/actualites/${post.slug}`} className="hover:underline">
             {title}
           </Link>
         </h3>
         <p className="mt-3 line-clamp-3 text-sm text-gray-600">{excerpt}</p>
         <Link
-          to={`/blog/${post.slug}`}
+          to={`/actualites/${post.slug}`}
           className="mt-5 inline-flex text-sm font-semibold text-navy transition-colors duration-150 hover:text-navy-light"
         >
           {t.readMore}

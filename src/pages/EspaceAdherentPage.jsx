@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import PageWrapper from "../components/layout/PageWrapper";
 import { useLang } from "../context/LangContext";
 import useAuth from "../hooks/useAuth";
-import { User, FileText, Bell, HelpCircle, Settings, LogOut } from "lucide-react";
+import LogoutButton from "../components/ui/logout-button";
+import { User, FileText, Bell, HelpCircle, Settings } from "lucide-react";
 
 const content = {
   fr: {
     title: "Espace Adhérent",
     subtitle: "Bienvenue dans votre espace personnel",
-    logoutLabel: "Se déconnecter",
     features: [
       {
         icon: User,
@@ -40,7 +40,6 @@ const content = {
   ar: {
     title: "فضاء المنخرط",
     subtitle: "مرحبا بكم في فضائكم الشخصي",
-    logoutLabel: "تسجيل الخروج",
     features: [
       {
         icon: User,
@@ -96,14 +95,8 @@ function EspaceAdherentPage() {
                 )}
               </p>
             </div>
-            <button
-              type="button"
-              onClick={logout}
-              className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-medium text-white transition-colors duration-150 hover:bg-white hover:text-navy"
-            >
-              <LogOut size={16} />
-              {t.logoutLabel}
-            </button>
+            
+            <LogoutButton onLogout={logout} />
           </div>
         </div>
       </section>
