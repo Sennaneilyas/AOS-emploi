@@ -82,8 +82,12 @@ function ContactPage() {
   return (
     <PageWrapper>
       {/* Header Section */}
-      <section className="bg-navy pt-32 pb-16 md:pt-40 md:pb-24 text-white">
-        <div className="max-w-7xl mx-auto px-4 text-center sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy pt-32 pb-16 md:pt-40 md:pb-24 text-white">
+        {/* Abstract background elements */}
+        <div className="absolute -start-24 -top-24 h-96 w-96 rounded-full bg-brand-orange/10 blur-3xl" />
+        <div className="absolute -end-24 -bottom-24 h-96 w-96 rounded-full bg-navy-light/20 blur-3xl" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center sm:px-6 lg:px-8">
           <h1
             className={`text-3xl md:text-4xl lg:text-5xl ${lang === "ar" ? "font-semibold" : "font-bold"
               }`}
@@ -97,7 +101,7 @@ function ContactPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-12 md:py-20">
+      <section className="bg-white py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-3">
             {/* Contact Form - Takes 2 columns */}
@@ -216,7 +220,7 @@ function ContactPage() {
 
             {/* Contact Information - Takes 1 column */}
             <div className="lg:col-span-1">
-              <div className="bg-gray-soft rounded-2xl p-6 md:p-8 space-y-8">
+              <div className="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 space-y-8 shadow-sm">
                 <h2
                   className={`text-xl text-navy mb-6 ${lang === "ar" ? "font-semibold" : "font-bold"
                     }`}

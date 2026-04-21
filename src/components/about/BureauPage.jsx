@@ -10,10 +10,14 @@ export default function BureauPage() {
 
   return (
     <PageWrapper>
-      {/* Header Banner */}
-      <section className="bg-navy py-16 text-white md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex max-w-3xl flex-col gap-4 text-center mx-auto items-center">
+      {/* Header Section */}
+      <section className="relative overflow-hidden bg-navy py-16 text-white md:py-24">
+        {/* Abstract background elements */}
+        <div className="absolute -start-24 -top-24 h-96 w-96 rounded-full bg-brand-orange/10 blur-3xl" />
+        <div className="absolute -end-24 -bottom-24 h-96 w-96 rounded-full bg-navy-light/20 blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex max-w-3xl flex-col gap-4">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-brand-orange backdrop-blur-sm">
               <Users size={14} />
               AOS Emploi
@@ -26,8 +30,9 @@ export default function BureauPage() {
         </div>
       </section>
 
+
       {/* Grid Area */}
-      <section className="bg-gray-soft py-16 md:py-24">
+      <section className="bg-white py-16 md:py-24 border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {data.members.map((member) => (

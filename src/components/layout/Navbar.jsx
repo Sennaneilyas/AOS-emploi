@@ -1,7 +1,8 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, LogOut, User } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useLang } from "../../context/LangContext";
+import useAuth from "../../hooks/useAuth";
 import { Switch } from "../ui/switch";
 import logo from "../../../public/logo.png";
 
@@ -23,6 +24,7 @@ const content = {
       { to: "/contact", label: "Contact" },
     ],
     adherent: "Espace Adhérent",
+    logout: "Déconnexion",
     languageLabel: "Langue",
   },
   ar: {
@@ -42,6 +44,7 @@ const content = {
       { to: "/contact", label: "اتصل بنا" },
     ],
     adherent: "فضاء المنخرط",
+    logout: "تسجيل الخروج",
     languageLabel: "اللغة",
   },
 };
@@ -155,6 +158,7 @@ function MobileDropdown({ label, children, onNavigate }) {
 
 function Navbar() {
   const { lang, setLang } = useLang();
+  const { isAuthenticated, logout } = useAuth();
   const location = useLocation();
   const t = content[lang];
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -239,16 +243,43 @@ function Navbar() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link
-              to="/espace-adherent"
-              className={`hidden rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-300 md:inline-flex ${
-                useWhiteText 
-                  ? "bg-white text-navy hover:bg-white/90" 
-                  : "bg-navy text-white hover:bg-navy-light"
-              }`}
-            >
-              {t.adherent}
-            </Link>
+            {isAuthenticated ? (
+              <div className="hidden items-center gap-3 md:flex">
+                <Link
+                  to="/espace-adherent"
+                  className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+                    useWhiteText 
+                      ? "text-white hover:bg-white/10" 
+                      : "text-navy hover:bg-navy/5"
+                  }`}
+                >
+                  <User size={18} />
+                  {t.adherent}
+                </Link>
+                <button
+                  onClick={logout}
+                  className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+                    useWhiteText 
+                      ? "bg-white text-navy hover:bg-white/90" 
+                      : "bg-red-50 text-red-600 hover:bg-red-100"
+                  }`}
+                >
+                  <LogOut size={18} />
+                  {t.logout}
+                </button>
+              </div>
+            ) : (
+              <Link
+                to="/espace-adherent"
+                className={`hidden rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-300 md:inline-flex ${
+                  useWhiteText 
+                    ? "bg-white text-navy hover:bg-white/90" 
+                    : "bg-navy text-white hover:bg-navy-light"
+                }`}
+              >
+                {t.adherent}
+              </Link>
+            )}
 
             <div className={`hidden h-5 w-px md:block ${useWhiteText ? "bg-white/20" : "bg-gray-200"}`} />
 
@@ -339,13 +370,36 @@ function Navbar() {
               )
             )}
 
-            <Link
-              to="/espace-adherent"
-              onClick={closeMobileMenu}
-              className="mt-2 rounded-lg bg-navy px-3 py-2.5 text-center text-sm font-semibold text-white transition-colors duration-150 hover:bg-navy-light"
-            >
-              {t.adherent}
-            </Link>
+            {isAuthenticated ? (
+              <div className="grid gap-2 mt-2">
+                <Link
+                  to="/espace-adherent"
+                  onClick={closeMobileMenu}
+                  className="flex items-center justify-center gap-2 rounded-lg bg-gray-50 px-3 py-2.5 text-sm font-semibold text-navy transition-colors duration-150 hover:bg-gray-100"
+                >
+                  <User size={18} />
+                  {t.adherent}
+                </Link>
+                <button
+                  onClick={() => {
+                    logout();
+                    closeMobileMenu();
+                  }}
+                  className="flex items-center justify-center gap-2 rounded-lg bg-red-50 px-3 py-2.5 text-sm font-semibold text-red-600 transition-colors duration-150 hover:bg-red-100"
+                >
+                  <LogOut size={18} />
+                  {t.logout}
+                </button>
+              </div>
+            ) : (
+              <Link
+                to="/espace-adherent"
+                onClick={closeMobileMenu}
+                className="mt-2 rounded-lg bg-navy px-3 py-2.5 text-center text-sm font-semibold text-white transition-colors duration-150 hover:bg-navy-light"
+              >
+                {t.adherent}
+              </Link>
+            )}
 
             <div className="mt-4 flex items-center justify-between rounded-lg border border-gray-200/70 bg-gray-50/50 p-3">
               <span className="text-sm font-medium text-gray-700">

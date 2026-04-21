@@ -1,90 +1,93 @@
 import { Link } from "react-router-dom";
-import { CalendarDays } from "lucide-react";
+import { CalendarDays, ArrowRight, ArrowLeft } from "lucide-react";
 import { useLang } from "../../context/LangContext";
-import actuality1 from "../../assets/images/actuality1.jpg";
-import actuality2 from "../../assets/images/actuality2.jpg";
-import actuality3 from "../../assets/images/actuality3.jpg";
+import { getCategoryLabel } from "../../mocks/actualities";
 
-const POST_IMAGES = {
-  "assemblee-generale-ordinaire-2025": actuality1,
-  "partenariat-mutuelle-sante-2026": actuality2,
-  "sortie-culturelle-ifrane-2026": actuality3,
-};
 /**
  * @param {{
  *  post: {
  *    id: number
  *    slug: string
- *    title?: { rendered?: string }
+ *    category_id?: string
  *    title_fr?: string
  *    title_ar?: string
- *    excerpt?: { rendered?: string }
  *    excerpt_fr?: string
  *    excerpt_ar?: string
- *    category_fr?: string
- *    category_ar?: string
  *    date: string
  *    image_url?: string
- *    _embedded?: { "wp:featuredmedia"?: Array<{ source_url?: string }> }
  *  }
  * }} props
  */
 function PostCard({ post }) {
   const { lang } = useLang();
   const isArabic = lang === "ar";
+  
   const content = {
     fr: { readMore: "Lire l'actualité" },
-    ar: { readMore: "قراءة الخبر" },
+    ar: { readMore: "اقرأ المزيد" },
   };
+  
   const t = content[lang];
+  
   const date = new Date(post.date).toLocaleDateString(isArabic ? "ar-MA" : "fr-FR", {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
 
-  const title = isArabic
-    ? post.title_ar || post.title?.rendered
-    : post.title_fr || post.title?.rendered;
-  const excerpt = isArabic
-    ? post.excerpt_ar || post.excerpt?.rendered
-    : post.excerpt_fr || post.excerpt?.rendered;
-  const category = isArabic ? post.category_ar : post.category_fr;
-  const image =
-    post.image_url ||
-    post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-    POST_IMAGES[post.slug] ||
-    "";
+  const title = isArabic ? post.title_ar : post.title_fr;
+  const excerpt = isArabic ? post.excerpt_ar : post.excerpt_fr;
+  const categoryLabel = getCategoryLabel(post.category_id, lang);
+  const image = post.image_url || "https://placehold.co/600x400/1B2A4A/FFFFFF?text=AOS+Emploi";
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow duration-200 hover:shadow-md">
-      {image ? (
-        <img src={image} alt={title} className="h-48 w-full object-cover" loading="lazy" />
-      ) : null}
-      <div className="p-6">
-        <div className="flex flex-wrap items-center gap-3">
-          {category ? (
-            <span className="rounded-full bg-navy px-3 py-1 text-xs font-medium text-white">
-              {category}
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      {/* Image Container */}
+      <div className="relative aspect-[16/10] overflow-hidden">
+        <img 
+          src={image} 
+          alt={title} 
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 
+          loading="lazy" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        
+        {/* Category Badge */}
+        {categoryLabel ? (
+          <div className="absolute top-4 start-4">
+            <span className="rounded-full bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-navy shadow-sm backdrop-blur-sm">
+              {categoryLabel}
             </span>
-          ) : null}
-          <span className="inline-flex items-center gap-1 text-xs text-gray-500">
-            <CalendarDays size={14} />
-            {date}
-          </span>
+          </div>
+        ) : null}
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-6">
+        <div className="mb-3 flex items-center gap-2 text-xs text-gray-500">
+          <CalendarDays size={14} className="text-brand-orange" />
+          <span>{date}</span>
         </div>
-        <h3 className={`mt-4 text-xl text-navy ${isArabic ? "font-semibold" : "font-bold"}`}>
-          <Link to={`/actualites/${post.slug}`} className="hover:underline">
+
+        <h3 className={`mb-3 line-clamp-2 text-xl text-navy group-hover:text-brand-orange transition-colors ${isArabic ? "font-bold leading-relaxed" : "font-bold"}`}>
+          <Link to={`/actualites/${post.slug}`}>
             {title}
           </Link>
         </h3>
-        <p className="mt-3 line-clamp-3 text-sm text-gray-600">{excerpt}</p>
-        <Link
-          to={`/actualites/${post.slug}`}
-          className="mt-5 inline-flex text-sm font-semibold text-navy transition-colors duration-150 hover:text-navy-light"
-        >
-          {t.readMore}
-        </Link>
+
+        <p className="mb-6 line-clamp-3 text-sm leading-relaxed text-gray-600">
+          {excerpt}
+        </p>
+
+        <div className="mt-auto pt-4 border-t border-gray-50">
+          <Link
+            to={`/actualites/${post.slug}`}
+            className="inline-flex items-center gap-2 text-sm font-bold text-navy transition-colors duration-150 hover:text-brand-orange"
+          >
+            {t.readMore}
+            {isArabic ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
+          </Link>
+        </div>
       </div>
     </article>
   );

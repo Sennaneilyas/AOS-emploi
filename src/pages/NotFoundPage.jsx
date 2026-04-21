@@ -28,18 +28,16 @@ function NotFoundPage() {
 
   return (
     <PageWrapper>
-      <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden bg-gray-soft py-16">
-        {/* Background gradient */}
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(27,42,74,0.05),transparent_70%)]"
-          aria-hidden
-        />
+      <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden bg-navy py-16 text-white">
+        {/* Abstract background elements */}
+        <div className="absolute -start-24 -top-24 h-96 w-96 rounded-full bg-brand-orange/10 blur-3xl" />
+        <div className="absolute -end-24 -bottom-24 h-96 w-96 rounded-full bg-navy-light/20 blur-3xl" />
 
         <div className="relative z-10 mx-auto w-full max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           {/* 404 Code */}
           <div className="mb-6">
             <span
-              className={`inline-flex items-center justify-center rounded-full bg-navy/10 px-6 py-2 text-6xl font-extrabold text-navy ${
+              className={`inline-flex items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-sm px-8 py-3 text-6xl font-extrabold text-brand-orange ${
                 isArabic ? "font-bold" : ""
               }`}
             >
@@ -49,7 +47,7 @@ function NotFoundPage() {
 
           {/* Title */}
           <h1
-            className={`text-3xl text-navy md:text-4xl lg:text-5xl ${
+            className={`text-3xl md:text-4xl lg:text-5xl ${
               isArabic ? "font-semibold" : "font-bold"
             }`}
           >
@@ -57,22 +55,22 @@ function NotFoundPage() {
           </h1>
 
           {/* Description */}
-          <p className="mt-4 max-w-xl mx-auto text-base text-gray-600 md:text-lg">
+          <p className="mt-4 max-w-xl mx-auto text-base text-white/70 md:text-lg">
             {t.description}
           </p>
 
           {/* Action Buttons */}
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
               to="/"
-              className="inline-flex items-center rounded-lg bg-navy px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-navy-light hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center rounded-xl bg-brand-orange px-8 py-3.5 text-sm font-bold text-white transition-all duration-200 hover:bg-white hover:text-navy hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
             >
               <Home className="me-2 h-4 w-4" />
               {t.goHome}
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center rounded-lg border-2 border-navy bg-transparent px-6 py-3 text-sm font-semibold text-navy transition-all duration-200 hover:bg-navy hover:text-white hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center rounded-xl border-2 border-white/20 bg-white/5 backdrop-blur-sm px-8 py-3.5 text-sm font-bold text-white transition-all duration-200 hover:bg-white hover:text-navy hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
             >
               <Compass className="me-2 h-4 w-4" />
               {t.explore}

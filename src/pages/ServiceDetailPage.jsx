@@ -43,8 +43,12 @@ function ServiceDetailPage() {
   return (
     <PageWrapper>
       {/* Header Section */}
-      <section className="bg-navy pt-32 pb-24 md:pt-40 md:pb-32 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy pt-32 pb-24 md:pt-40 md:pb-32 text-white">
+        {/* Abstract background elements */}
+        <div className="absolute -start-24 -top-24 h-96 w-96 rounded-full bg-brand-orange/10 blur-3xl" />
+        <div className="absolute -end-24 -bottom-24 h-96 w-96 rounded-full bg-navy-light/20 blur-3xl" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Button */}
           <Link
             to="/services"
@@ -67,7 +71,7 @@ function ServiceDetailPage() {
       </section>
 
       {/* Content Section with Overlap */}
-      <div className="bg-gray-soft pb-24">
+      <div className="bg-white pb-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={containerVariants}

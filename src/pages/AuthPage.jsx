@@ -47,7 +47,7 @@ export default function AuthPage() {
   // Token verification in progress
   if (checking) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-soft">
+      <div className="flex min-h-screen items-center justify-center bg-white">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-navy border-t-transparent" />
       </div>
     );
@@ -56,8 +56,12 @@ export default function AuthPage() {
   return (
     <PageWrapper>
       {/* Header Section */}
-      <section className="bg-navy pt-32 pb-16 md:pt-32 md:pb-24 text-white">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy pt-32 pb-16 md:pt-32 md:pb-24 text-white">
+        {/* Abstract background elements */}
+        <div className="absolute -start-24 -top-24 h-96 w-96 rounded-full bg-brand-orange/10 blur-3xl" />
+        <div className="absolute -end-24 -bottom-24 h-96 w-96 rounded-full bg-navy-light/20 blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <motion.h1
             key={tab}
             initial={{ opacity: 0, y: -10 }}
@@ -73,7 +77,7 @@ export default function AuthPage() {
       </section>
 
       {/* Form Section */}
-      <section className="bg-gray-soft pt-8 pb-24 md:pt-12">
+      <section className="bg-white pt-8 pb-24 md:pt-12">
         <div className="mx-auto w-full max-w-md px-4 sm:px-6">
           <div className="relative z-10">
             {/* Card */}

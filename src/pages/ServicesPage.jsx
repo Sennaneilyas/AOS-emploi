@@ -51,8 +51,12 @@ function ServicesPage() {
 
   return (
     <PageWrapper>
-      <section className="bg-navy pt-32 pb-16 md:pt-40 md:pb-24 text-white">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy pt-32 pb-16 md:pt-40 md:pb-24 text-white">
+        {/* Abstract background elements */}
+        <div className="absolute -start-24 -top-24 h-96 w-96 rounded-full bg-brand-orange/10 blur-3xl" />
+        <div className="absolute -end-24 -bottom-24 h-96 w-96 rounded-full bg-navy-light/20 blur-3xl" />
+
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <AnimatedContainer className="mx-auto max-w-3xl text-center">
             <h1 className={`text-3xl font-bold tracking-tight md:text-5xl ${isArabic ? "font-semibold" : "font-extrabold"}`}>

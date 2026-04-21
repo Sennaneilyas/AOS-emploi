@@ -13,7 +13,7 @@ function HomePage() {
     loading: postsLoading,
     error: postsError,
     retry: retryPosts,
-  } = usePosts(3);
+  } = usePosts({ perPage: 3 });
   const {
     services,
     loading: servicesLoading,

@@ -45,8 +45,12 @@ export default function DocumentLayout({ data }) {
   return (
     <PageWrapper>
       {/* Header Banner */}
-      <section className="bg-navy py-16 text-white md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-navy py-16 text-white md:py-24">
+        {/* Abstract background elements */}
+        <div className="absolute -start-24 -top-24 h-96 w-96 rounded-full bg-brand-orange/10 blur-3xl" />
+        <div className="absolute -end-24 -bottom-24 h-96 w-96 rounded-full bg-navy-light/20 blur-3xl" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex max-w-3xl flex-col gap-4">
             <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-brand-orange backdrop-blur-sm">
               <FileText size={14} />
@@ -64,7 +68,7 @@ export default function DocumentLayout({ data }) {
       </section>
 
       {/* Content Area with Sidebar */}
-      <section className="bg-gray-soft py-12">
+      <section className="bg-white py-12 border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12">
             
