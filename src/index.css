@@ -38,10 +38,110 @@ html {
   .marquee-track {
     animation-duration: 90s;
   }
-}
+  }
 
-@media (prefers-reduced-motion: reduce) {
+  @media (prefers-reduced-motion: reduce) {
   .marquee-track {
     animation-play-state: paused;
   }
-}
+  }
+
+  /* ─── Interactive Mobile Menu ─────────────────────────────────────────── */
+  :root {
+  --component-inactive-color: #94a3b8;
+  --component-bg: #ffffff;
+  --component-shadow: rgba(27, 42, 74, 0.1);
+  --component-active-bg: rgba(242, 101, 34, 0.1);
+  --component-line-inactive-color: #e2e8f0;
+  --component-active-color-default: #1B2A4A;
+  }
+
+  .menu-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  height: 4.5rem;
+  background-color: var(--component-bg);
+  box-shadow: 0 -4px 20px var(--component-shadow);
+  padding: 0 0.5rem;
+  border-top: 1px solid #f1f5f9;
+  }
+
+  .menu-bottom__item {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  color: var(--component-inactive-color);
+  transition: all 0.3s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  min-width: 0;
+  }
+
+  .menu-bottom__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 2px;
+  width: var(--lineWidth);
+  background-color: var(--component-active-color, #F26522);
+  transition: all 0.3s ease;
+  opacity: 0;
+  }
+
+  .menu-bottom__item.active {
+  color: var(--component-active-color, #F26522);
+  }
+
+  .menu-bottom__item.active::before {
+  opacity: 1;
+  }
+
+  .menu-bottom__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  }
+
+  .menu-bottom__item.active .menu-bottom__icon {
+  background-color: var(--component-active-bg);
+  animation: iconBounce 0.6s ease;
+  }
+
+  .menu-bottom__text {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  }
+
+  .menu-bottom__item.active .menu-bottom__text {
+  opacity: 1;
+  }
+
+  @keyframes iconBounce {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-0.3em); }
+  40% { transform: translateY(0); }
+  60% { transform: translateY(-0.1em); }
+  80% { transform: translateY(0); }
+  }
