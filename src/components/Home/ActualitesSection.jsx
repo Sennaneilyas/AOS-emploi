@@ -41,7 +41,7 @@ function ActualitesSection({ posts, loading, error, onRetry }) {
             <ErrorBanner message={error} onRetry={onRetry} retryLabel={retryLabel} />
           ) : null}
           {!loading && !error && posts.length === 0 ? <EmptyState message={emptyMessage} /> : null}
-          {!loading && !error && posts.length > 0 ? <PostList posts={posts} /> : null}
+          {!loading && !error && posts.length > 0 ? <PostList posts={posts.slice(0, 3)} /> : null}
         </div>
 
         <div className="mt-10 text-center">
