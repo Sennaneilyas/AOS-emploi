@@ -118,7 +118,7 @@ function ActualitiesDetailPage() {
             to="/actualites" 
             className="group inline-flex items-center gap-2 text-sm font-bold text-white/60 hover:text-white transition-colors mb-8"
           >
-            {isArabic ? <ArrowRight size={16} /> : <ArrowLeft size={16} />}
+            <ArrowLeft size={16} className="rtl:rotate-180" />
             {t.backToList}
           </Link>
 
@@ -237,7 +237,7 @@ function ActualitiesDetailPage() {
                   className="text-sm font-bold text-brand-orange hover:underline flex items-center gap-1"
                 >
                   {isArabic ? "مشاهدة الكل" : "Voir tout"}
-                  {isArabic ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
+                  <ChevronRight size={16} className="rtl:rotate-180" />
                 </Link>
               </div>
               

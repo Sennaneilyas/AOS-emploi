@@ -117,6 +117,18 @@ function RegisterForm() {
         />
       </Field>
 
+      <div className="flex items-center gap-3 py-2">
+        <input
+          type="checkbox"
+          id="is_retired"
+          className="h-4 w-4 rounded border-gray-300 text-brand-orange focus:ring-brand-orange"
+          {...register("is_retired")}
+        />
+        <label htmlFor="is_retired" className="text-sm font-medium text-gray-700 cursor-pointer">
+          {t.registerRetired}
+        </label>
+      </div>
+
       <button
         type="submit"
         disabled={isSubmitting}

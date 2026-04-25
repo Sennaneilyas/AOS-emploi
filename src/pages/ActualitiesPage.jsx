@@ -228,9 +228,9 @@ function ActualitiesPage() {
                       onClick={() => handlePageChange(currentPage - 1)}
                       disabled={currentPage === 1}
                       className="flex items-center justify-center h-10 w-10 rounded-full border border-gray-200 bg-white text-navy hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-                      aria-label={t.pagination.prev}
                     >
-                      {isArabic ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+                      <span className="sr-only">{t.pagination.prev}</span>
+                      <ChevronLeft size={20} className="rtl:rotate-180" />
                     </button>
                     
                     <div className="flex items-center gap-2">
@@ -245,9 +245,9 @@ function ActualitiesPage() {
                       onClick={() => handlePageChange(currentPage + 1)}
                       disabled={currentPage === totalPages}
                       className="flex items-center justify-center h-10 w-10 rounded-full border border-gray-200 bg-white text-navy hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-                      aria-label={t.pagination.next}
                     >
-                      {isArabic ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
+                      <span className="sr-only">{t.pagination.next}</span>
+                      <ChevronRight size={20} className="rtl:rotate-180" />
                     </button>
                   </div>
                 )}

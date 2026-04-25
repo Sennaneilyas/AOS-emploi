@@ -26,7 +26,7 @@ export const MenuVertical = ({
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="z-0"
           >
-            <ArrowRight strokeWidth={3} className="size-10" />
+            <ArrowRight strokeWidth={3} className="size-10 rtl:rotate-180" />
           </motion.div>
 
           <MotionLink

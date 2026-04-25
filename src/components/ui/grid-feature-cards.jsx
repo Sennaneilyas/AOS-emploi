@@ -93,7 +93,7 @@ export function FeatureCard({ feature, className, to, ...props }) {
       {...wrapperProps}
     >
       {/* Background Grid Pattern */}
-      <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
+      <div className="pointer-events-none absolute top-0 start-1/2 -mt-2 -ms-20 h-full w-full [mask-image:linear-gradient(white,transparent)]">
         <div className="absolute inset-0 bg-gradient-to-r from-navy/5 to-navy/0 opacity-40 transition-opacity duration-300 group-hover:opacity-100 [mask-image:radial-gradient(farthest-side_at_top,white,transparent)]">
           <GridPattern
             width={20}

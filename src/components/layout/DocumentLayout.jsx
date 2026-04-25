@@ -90,7 +90,7 @@ export default function DocumentLayout({ data }) {
                         >
                           <span className="line-clamp-2">{chapter.title}</span>
                           {isActive && (
-                            isArabic ? <ChevronLeft size={16} className="shrink-0" /> : <ChevronRight size={16} className="shrink-0" />
+                            <ChevronRight size={16} className="shrink-0 rtl:rotate-180" />
                           )}
                         </button>
                       </li>

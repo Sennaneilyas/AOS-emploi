@@ -37,6 +37,7 @@ export const authContent = {
     registerSuccessSub:
       "Votre demande a été reçue. Vous recevrez votre clé d'accès par email après validation par l'administration.",
     registerFallbackError: "Une erreur est survenue.",
+    registerRetired: "Je suis retraité(e)",
     registerErrors: {
       nomRequired: "Le nom est requis.",
       emailRequired: "L'email est requis.",
@@ -83,6 +84,7 @@ export const authContent = {
     registerSuccessSub:
       "تم استلام طلبك. ستتلقى مفتاح الوصول الخاص بك عبر البريد الإلكتروني بعد التحقق من طرف الإدارة.",
     registerFallbackError: "حدث خطأ ما.",
+    registerRetired: "أنا متقاعد(ة)",
     registerErrors: {
       nomRequired: "الاسم مطلوب.",
       emailRequired: "البريد الإلكتروني مطلوب.",

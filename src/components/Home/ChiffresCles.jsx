@@ -108,7 +108,7 @@ function ChiffresCles() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="hidden md:flex absolute -top-2 left-1/2 -translate-x-1/2 z-10 h-4 w-4 rounded-full bg-navy items-center justify-center"
+                    className="hidden md:flex absolute -top-2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 z-10 h-4 w-4 rounded-full bg-navy items-center justify-center"
                   >
                     <div className="h-1.5 w-1.5 rounded-full bg-white" />
                   </motion.div>

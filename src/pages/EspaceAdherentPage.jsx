@@ -6,8 +6,9 @@ import DashboardSidebar from "../components/espace-adherent/DashboardSidebar";
 import OverviewSection from "../components/espace-adherent/OverviewSection";
 import ProfileSection from "../components/espace-adherent/ProfileSection";
 import DocumentsSection from "../components/espace-adherent/DocumentsSection";
+import DemandesSection from "../components/espace-adherent/DemandesSection";
 import { InteractiveMenu } from "../components/ui/modern-mobile-menu";
-import { Bell, Settings, LayoutDashboard, User, FileText } from "lucide-react";
+import { Bell, ClipboardList, LayoutDashboard, User, FileText } from "lucide-react";
 
 const mobileMenuContent = {
   fr: [
@@ -15,14 +16,14 @@ const mobileMenuContent = {
     { id: 'profile', label: 'Profil', icon: User },
     { id: 'documents', label: 'Docs', icon: FileText },
     { id: 'notifications', label: 'Alertes', icon: Bell },
-    { id: 'settings', label: 'Reglages', icon: Settings },
+    { id: 'demandes', label: 'Demandes', icon: ClipboardList },
   ],
   ar: [
     { id: 'overview', label: 'الرئيسية', icon: LayoutDashboard },
     { id: 'profile', label: 'ملفي', icon: User },
     { id: 'documents', label: 'وثائقي', icon: FileText },
     { id: 'notifications', label: 'تنبيهات', icon: Bell },
-    { id: 'settings', label: 'إعدادات', icon: Settings },
+    { id: 'demandes', label: 'الطلبات', icon: ClipboardList },
   ]
 };
 
@@ -52,17 +53,8 @@ function EspaceAdherentPage() {
             </p>
           </div>
         );
-      case "settings":
-        return (
-          <div className="flex flex-col items-center justify-center py-24 text-center">
-            <div className="h-16 w-16 rounded-full bg-gray-50 flex items-center justify-center mb-4">
-              <Settings className="h-8 w-8 text-gray-400" />
-            </div>
-            <p className="text-gray-500">
-              {isArabic ? "الإعدادات ستكون متاحة قريبا." : "Les paramètres seront bientôt disponibles."}
-            </p>
-          </div>
-        );
+      case "demandes":
+        return <DemandesSection />;
       default:
         return <OverviewSection />;
     }

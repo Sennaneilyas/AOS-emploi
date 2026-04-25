@@ -1,4 +1,4 @@
-import { User, FileText, Bell, LayoutDashboard, Settings } from "lucide-react";
+import { User, FileText, Bell, LayoutDashboard, ClipboardList } from "lucide-react";
 
 export const dashboardContent = {
   fr: {
@@ -7,7 +7,7 @@ export const dashboardContent = {
       profile: "Mon Profil",
       documents: "Mes Documents",
       notifications: "Notifications",
-      settings: "Paramètres",
+      demandes: "Mes Demandes",
     },
     overview: {
       welcome: "Ravi de vous revoir,",
@@ -40,6 +40,50 @@ export const dashboardContent = {
     notifications: {
       title: "Notifications",
       empty: "Vous n'avez pas de nouvelles notifications.",
+    },
+    demandes: {
+      title: "Mes Demandes",
+      description: "Soumettez vos demandes pour les événements et prestations sociales de l'AOS.",
+      historyTitle: "Historique des demandes",
+      formTitle: "Nouvelle demande",
+      submitBtn: "Envoyer la demande",
+      successMsg: "Votre demande a été envoyée avec succès !",
+      types: {
+        aid: {
+          title: "Aide Aïd Al-Adha",
+          desc: "Demande d'aide financière pour l'Aïd Al-Adha."
+        },
+        loan: {
+          title: "Prêt Exceptionnel",
+          desc: "Demande de prêt social exceptionnel."
+        },
+        vacation: {
+          title: "Centre d'Estivage",
+          desc: "Réservation de logements de vacances."
+        }
+      },
+      fields: {
+        type: "Type de demande",
+        amount: "Montant demandé (MAD)",
+        reason: "Motif",
+        startDate: "Date de début",
+        endDate: "Date de fin",
+        persons: "Nombre de personnes",
+        destination: "Destination souhaitée",
+        rib: "RIB (Relevé d'Identité Bancaire)",
+        declaration: "Je certifie sur l'honneur l'exactitude des informations fournies."
+      },
+      status: {
+        pending: "En attente",
+        approved: "Approuvée",
+        rejected: "Rejetée"
+      },
+      tableHeaders: {
+        id: "ID Demande",
+        date: "Date",
+        type: "Type",
+        status: "Statut"
+      }
     }
   },
   ar: {
@@ -48,7 +92,7 @@ export const dashboardContent = {
       profile: "ملفي الشخصي",
       documents: "وثائقي",
       notifications: "الإشعارات",
-      settings: "الإعدادات",
+      demandes: "طلباتي",
     },
     overview: {
       welcome: "يسعدنا رؤيتك مرة أخرى،",
@@ -81,6 +125,50 @@ export const dashboardContent = {
     notifications: {
       title: "الإشعارات",
       empty: "ليس لديك أي إشعارات جديدة.",
+    },
+    demandes: {
+      title: "طلباتي",
+      description: "قدم طلباتك للاستفادة من الفعاليات والخدمات الاجتماعية للجمعية.",
+      historyTitle: "سجل الطلبات",
+      formTitle: "طلب جديد",
+      submitBtn: "إرسال الطلب",
+      successMsg: "تم إرسال طلبك بنجاح!",
+      types: {
+        aid: {
+          title: "منحة عيد الأضحى",
+          desc: "طلب مساعدة مالية بمناسبة عيد الأضحى."
+        },
+        loan: {
+          title: "سلف استثنائي",
+          desc: "طلب سلف اجتماعي استثنائي."
+        },
+        vacation: {
+          title: "مراكز الاصطياف",
+          desc: "حجز سكن لقضاء العطلة."
+        }
+      },
+      fields: {
+        type: "نوع الطلب",
+        amount: "المبلغ المطلوب (درهم)",
+        reason: "السبب",
+        startDate: "تاريخ البدء",
+        endDate: "تاريخ الانتهاء",
+        persons: "عدد الأشخاص",
+        destination: "الوجهة المطلوبة",
+        rib: "رقم الحساب البنكي (RIB)",
+        declaration: "أصرح بشرفي بصحة المعلومات المقدمة."
+      },
+      status: {
+        pending: "قيد المعالجة",
+        approved: "مقبول",
+        rejected: "مرفوض"
+      },
+      tableHeaders: {
+        id: "رقم الطلب",
+        date: "التاريخ",
+        type: "النوع",
+        status: "الحالة"
+      }
     }
   },
 };
@@ -90,5 +178,5 @@ export const sidebarItems = [
   { id: "profile", labelKey: "profile", icon: User },
   { id: "documents", labelKey: "documents", icon: FileText },
   { id: "notifications", labelKey: "notifications", icon: Bell },
-  { id: "settings", labelKey: "settings", icon: Settings },
+  { id: "demandes", labelKey: "demandes", icon: ClipboardList },
 ];

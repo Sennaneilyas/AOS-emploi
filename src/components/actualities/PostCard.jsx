@@ -85,7 +85,7 @@ function PostCard({ post }) {
             className="inline-flex items-center gap-2 text-sm font-bold text-navy transition-colors duration-150 hover:text-brand-orange"
           >
             {t.readMore}
-            {isArabic ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
+            <ArrowRight size={16} className="rtl:rotate-180" />
           </Link>
         </div>
       </div>
