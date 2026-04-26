@@ -28,19 +28,19 @@ const DemandesSection = () => {
       id: "aid",
       heading: t.types.aid.title,
       description: t.types.aid.desc,
-      imgSrc: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800",
+      imgSrc: "/images/demands/aid-adha.png",
     },
     {
       id: "loan",
       heading: t.types.loan.title,
       description: t.types.loan.desc,
-      imgSrc: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=800",
+      imgSrc: "/images/demands/loan.png",
     },
     {
       id: "vacation",
       heading: t.types.vacation.title,
       description: t.types.vacation.desc,
-      imgSrc: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&q=80&w=800",
+      imgSrc: "/images/demands/vacation.png",
     }
   ];
 
