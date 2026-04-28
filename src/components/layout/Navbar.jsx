@@ -83,23 +83,23 @@ function DesktopDropdown({ label, children, useWhiteText }) {
       </button>
 
       <div
-        className={`absolute start-0 top-full z-50 pt-2 transition-all duration-200 ${
+        className={`absolute start-0 top-full z-50 pt-2 transition-all duration-300 ${
           open
             ? "pointer-events-auto translate-y-0 opacity-100"
-            : "pointer-events-none -translate-y-1 opacity-0"
+            : "pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
-        <div className="min-w-48 overflow-hidden rounded-xl border border-gray-100 bg-white py-1 shadow-lg shadow-black/5">
+        <div className="min-w-56 overflow-hidden rounded-2xl border border-white/40 bg-white/95 p-1.5 shadow-2xl shadow-navy/10 backdrop-blur-xl">
           {children.map((child) => (
             <NavLink
               key={child.to}
               to={child.to}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-2.5 text-sm transition-colors duration-150 ${
+                `block rounded-xl px-4 py-3 text-sm transition-all duration-200 ${
                   isActive
-                    ? "bg-navy/5 font-semibold text-navy"
-                    : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                    ? "bg-navy text-white font-semibold shadow-md shadow-navy/20"
+                    : "text-gray-600 hover:bg-navy/5 hover:text-navy"
                 }`
               }
             >
@@ -154,6 +154,45 @@ function MobileDropdown({ label, children, onNavigate }) {
   );
 }
 
+function LanguageSwitcher({ lang, setLang, isTransparent, useWhiteText, t }) {
+  return (
+    <div className={`flex items-center gap-3 rounded-full border px-3 py-1.5 transition-all duration-300 ${
+      isTransparent 
+        ? "border-gray-200/20 bg-black/5 hover:bg-black/10" 
+        : (useWhiteText ? "border-white/20 bg-white/10 hover:bg-white/20" : "border-gray-200/70 bg-white hover:border-gray-300 shadow-sm")
+    }`}>
+      <button
+        onClick={() => setLang("fr")}
+        className={`text-xs font-bold transition-all duration-200 hover:scale-110 ${
+          lang === "fr" 
+            ? (useWhiteText ? "text-white" : "text-navy") 
+            : (useWhiteText ? "text-white/40" : "text-gray-400")
+        }`}
+      >
+        FR
+      </button>
+      <div className="flex items-center">
+        <Switch
+          checked={lang === "ar"}
+          onCheckedChange={(checked) => setLang(checked ? "ar" : "fr")}
+          size="sm"
+          aria-label={t.languageLabel}
+        />
+      </div>
+      <button
+        onClick={() => setLang("ar")}
+        className={`text-xs font-bold transition-all duration-200 hover:scale-110 ${
+          lang === "ar" 
+            ? (useWhiteText ? "text-white" : "text-navy") 
+            : (useWhiteText ? "text-white/40" : "text-gray-400")
+        }`}
+      >
+        AR
+      </button>
+    </div>
+  );
+}
+
 function Navbar() {
   const { lang, setLang } = useLang();
   const { isAuthenticated } = useAuth();
@@ -198,12 +237,12 @@ function Navbar() {
         >
           <Link
             to="/"
-            className="flex items-center gap-2 transition-transform duration-300"
+            className="flex items-center gap-2 transition-transform duration-300 hover:scale-105 active:scale-95"
           >
             <img
               src={logo}
               alt={t.brand}
-              className={`w-auto transition-all duration-300 ${scrolled ? "h-10" : "h-14"} ${useWhiteText ? "brightness-0 invert" : ""}`}
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-9 md:h-10" : "h-12 md:h-14"} ${useWhiteText ? "brightness-0 invert" : ""}`}
             />
             <span className="sr-only">{t.brand}</span>
           </Link>
@@ -253,33 +292,14 @@ function Navbar() {
 
             <div className={`hidden h-5 w-px md:block ${useWhiteText ? "bg-white/20" : "bg-gray-200"}`} />
 
-            <div className={`hidden items-center gap-3 rounded-full border px-3 py-1.5 sm:inline-flex transition-colors duration-300 ${
-              isTransparent ? "border-gray-200/20 bg-black/5" : (useWhiteText ? "border-white/20 bg-white/10" : "border-gray-200/70 bg-white")
-            }`}>
-              <span
-                className={`text-xs font-bold transition-colors ${
-                  lang === "fr" 
-                    ? (useWhiteText ? "text-white" : "text-navy") 
-                    : (useWhiteText ? "text-white/40" : "text-gray-400")
-                }`}
-              >
-                FR
-              </span>
-              <Switch
-                checked={lang === "ar"}
-                onCheckedChange={(checked) => setLang(checked ? "ar" : "fr")}
-                size="sm"
-                aria-label={t.languageLabel}
+            <div className="hidden sm:block">
+              <LanguageSwitcher 
+                lang={lang} 
+                setLang={setLang} 
+                isTransparent={isTransparent} 
+                useWhiteText={useWhiteText} 
+                t={t} 
               />
-              <span
-                className={`text-xs font-bold transition-colors ${
-                  lang === "ar" 
-                    ? (useWhiteText ? "text-white" : "text-navy") 
-                    : (useWhiteText ? "text-white/40" : "text-gray-400")
-                }`}
-              >
-                AR
-              </span>
             </div>
             <button
               type="button"
@@ -353,28 +373,13 @@ function Navbar() {
               <span className="text-sm font-medium text-gray-700">
                 {t.languageLabel}
               </span>
-              <div className="flex items-center gap-3 rounded-full bg-white px-3 py-1.5 shadow-sm border border-gray-100">
-                <span
-                  className={`text-xs font-bold transition-colors ${
-                    lang === "fr" ? "text-navy" : "text-gray-400"
-                  }`}
-                >
-                  FR
-                </span>
-                <Switch
-                  checked={lang === "ar"}
-                  onCheckedChange={(checked) => setLang(checked ? "ar" : "fr")}
-                  size="sm"
-                  aria-label={t.languageLabel}
-                />
-                <span
-                  className={`text-xs font-bold transition-colors ${
-                    lang === "ar" ? "text-navy" : "text-gray-400"
-                  }`}
-                >
-                  AR
-                </span>
-              </div>
+              <LanguageSwitcher 
+                lang={lang} 
+                setLang={setLang} 
+                isTransparent={false} 
+                useWhiteText={false} 
+                t={t} 
+              />
             </div>
           </nav>
         </div>

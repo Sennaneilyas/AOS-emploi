@@ -20,6 +20,7 @@ const content = {
     addressValue: "Ministère de l'Emploi, Chellah, Rabat, Maroc",
     phone: "Téléphone",
     phoneValue: "+212 631 840 091",
+    email: "Email",
     hours: "Heures de bureau",
     hoursValue: "Lundi - Vendredi: 8h30 - 17h00",
     successMessage: "Message envoyé avec succès!",
@@ -40,6 +41,7 @@ const content = {
     addressValue: "وزارة التشغيل، شلاه، الرباط، المغرب",
     phone: "الهاتف",
     phoneValue: "+212 631 840 091",
+    email: "البريد الإلكتروني",
     hours: "ساعات العمل",
     hoursValue: "الاثنين - الجمعة: 8:30 - 17:00",
     successMessage: "!تم إرسال الرسالة بنجاح",
@@ -256,7 +258,8 @@ function ContactPage() {
                     </h3>
                     <a
                       href={`tel:${t.phoneValue.replace(/\s/g, "")}`}
-                      className="text-sm text-navy hover:text-navy-light transition-colors"
+                      className="text-sm text-navy hover:text-navy-light transition-colors font-medium"
+                      dir="ltr"
                     >
                       {t.phoneValue}
                     </a>
@@ -271,7 +274,7 @@ function ContactPage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+                    <h3 className="font-semibold text-gray-900 mb-1">{t.email}</h3>
                     <a
                       href="mailto:contact@aosemploi.com"
                       className="text-sm text-navy hover:text-navy-light transition-colors"

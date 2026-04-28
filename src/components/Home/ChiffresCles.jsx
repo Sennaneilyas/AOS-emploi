@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { useInView, motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
+import { useInView, motion, useMotionValue, useTransform, animate } from "framer-motion";
 import * as Icons from "lucide-react";
 import chiffres from "../../mocks/chiffres.json";
 import homeContent from "../../mocks/home.json";
@@ -36,26 +35,18 @@ function Counter({ value, suffix }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
   const [displayValue, setDisplayValue] = useState(0);
+  const count = useMotionValue(0);
 
   useEffect(() => {
-    if (!isInView) return;
-
-    const duration = 2000;
-    const start = performance.now();
-    const raf = { id: 0 };
-
-    const step = (timestamp) => {
-      const progress = Math.min((timestamp - start) / duration, 1);
-      const eased = 1 - (1 - progress) * (1 - progress);
-      setDisplayValue(Math.round(eased * value));
-      if (progress < 1) {
-        raf.id = requestAnimationFrame(step);
-      }
-    };
-
-    raf.id = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf.id);
-  }, [isInView, value]);
+    if (isInView) {
+      const controls = animate(count, value, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate: (latest) => setDisplayValue(Math.round(latest)),
+      });
+      return controls.stop;
+    }
+  }, [isInView, value, count]);
 
   return (
     <span ref={ref}>
